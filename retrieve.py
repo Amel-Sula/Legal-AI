@@ -1,0 +1,273 @@
+#!/usr/bin/env python3
+"""
+Step 2 of the pipeline: given a contract clause, find the articles of the
+Kodi i Punes that govern it.
+
+BM25 over the 578 citable points. No model download, no GPU, no network.
+This is the baseline an embedding retriever has to beat.
+"""
+import json, os, re, math, sys
+from collections import Counter, defaultdict
+from pathlib import Path
+
+# Albanian stopwords: function words that carry no retrieval signal.
+STOP = set("""
+i e te të së nё në nga me për por dhe ose që i cilit cilës ky kjo ai ajo
+është jane janë qe a as ne nje një mund do ka kam kane kanë ishte do duhet
+si kur ku sa me më mbi pas para brenda jashte jashtë gjate gjatë sipas
+deri edhe vetem vetëm ketu këtu atje kesaj kësaj ketij këtij tjera tjerë
+ndersa ndërsa prej tek te nder ndër cdo çdo disa shume shumë
+""".split())
+
+TOKEN = re.compile(r"[a-zA-ZëËçÇ]+|\d+", re.UNICODE)
+
+
+# Inflectional tails, longest first. A suffix is only stripped if what
+# remains is still a plausible stem (MIN_STEM chars) -- otherwise "prove"
+# loses "ve" and becomes "pro" while "provës" becomes "prov", and the two
+# forms of the same word stop matching.
+SUFFIXES = sorted(
+    ("ëve", "eve", "ave", "jes", "ies", "ëse", "ët", "ës", "es", "it",
+     "in", "ut", "un", "ve", "ja", "je", "te", "të", "së",
+     "i", "e", "a", "ë", "n", "t", "s"),
+    key=len, reverse=True,
+)
+MIN_STEM = 4
+
+
+def stem(t: str) -> str:
+    for suf in SUFFIXES:
+        if t.endswith(suf) and len(t) - len(suf) >= MIN_STEM:
+            return t[: -len(suf)]
+    return t
+
+
+# Albanian is routinely typed without diacritics ("jave" for "javës",
+# "proves" for "provës"). The Code has them, contracts often do not. Both
+# sides MUST be folded identically or the same word indexes as two words and
+# retrieval silently returns the wrong articles.
+DIA = str.maketrans({"ë": "e", "Ë": "e", "ç": "c", "Ç": "c"})
+
+
+# HOW MANY LEADING CHARACTERS UNIFY A WORD FAMILY. Four, and four is measured.
+#
+# It was six, and six split families that diverge at the sixth character:
+# "njoftuar" gave ~njoftu and "njoftim" gave ~njofti, so a question asking
+# "sa kohe me pare duhet njoftuar" scored Neni 143/1 -- the article that
+# actually states the notice periods -- at rank 218 of 492.
+#
+# Measured on the full 19,475-unit corpus, both harnesses, because a shorter
+# prefix conflates more words and conflation gets worse with more text:
+#
+#     prefiks   mat_kerkimin (vetem KP / me zgjedhje)   pyetje: ne tri te paret
+#        6              9/10  /  9/10                           5/9
+#        5              9/10  /  9/10                           6/9
+#        4             10/10  / 10/10                           7/9
+#
+# Four wins on both sides at once, which is rare enough to be worth trusting.
+# It is a knob so the next corpus can be re-measured rather than assumed:
+#
+#     RETRIEVE_PREFIX=6 python3 mat_kerkimin.py
+PREFIX_LEN = int(os.environ.get("RETRIEVE_PREFIX", "4"))
+
+# Hand-built concept map. Employment law uses a small vocabulary, and the
+# generic stemmer cannot unify its word families: "javë" stems to "jave" but
+# "javore" stems to "javor", so a clause saying "50 ore ne jave" never matched
+# "KOHEZGJATJA MAKSIMALE JAVORE E PUNES". Longest prefix wins. Both the index
+# and the query pass through here, so the mapping is symmetric.
+CONCEPTS = [
+    ("kohezgjat", "C_KOHA"), ("kohe", "C_KOHA"), ("koha", "C_KOHA"),
+    ("kohen", "C_KOHA"), ("kohes", "C_KOHA"),
+    ("javor", "C_JAVA"), ("jav", "C_JAVA"),
+    ("orar", "C_ORA"), ("ore", "C_ORA"),
+    ("ditor", "C_DITA"), ("dit", "C_DITA"),
+    ("mujor", "C_MUAJI"), ("muaj", "C_MUAJI"),
+    ("vjetor", "C_VITI"), ("vjet", "C_VITI"), ("vjec", "C_VITI"), ("vit", "C_VITI"),
+    ("prov", "C_PROVA"),
+    ("pushim", "C_PUSHIMI"),
+    ("pag", "C_PAGA"),
+    ("njoft", "C_NJOFTIMI"),
+    ("konkurr", "C_KONKURRENCA"),
+    ("kufi", "C_KUFIRI"), ("maksimal", "C_KUFIRI"), ("minimal", "C_KUFIRI"),
+    ("shtes", "C_SHTESE"),
+    ("zgjidh", "C_ZGJIDHJA"), ("perfundim", "C_ZGJIDHJA"),
+    ("disiplin", "C_DISIPLINA"),
+    ("shtatzen", "C_LINDJA"), ("lehon", "C_LINDJA"), ("lindj", "C_LINDJA"),
+    ("mitur", "C_TEMITUR"), ("femij", "C_TEMITUR"), ("mosh", "C_TEMITUR"),
+]
+CONCEPTS.sort(key=lambda kv: -len(kv[0]))
+
+
+def concept(t: str):
+    for pref, c in CONCEPTS:
+        if t.startswith(pref):
+            return c
+    return None
+
+
+def toks(s: str):
+    """Three signals per word, strongest first:
+
+      1. the stem            - exact vocabulary match
+      2. a truncated prefix  - bridges word families the stemmer misses
+      3. a concept token     - bridges the ones the prefix misses too
+
+    BM25's IDF weighting keeps the specific signals dominant; the broader
+    ones only decide ties, which is where the missing articles were losing.
+    """
+    out = []
+    for raw in TOKEN.findall(s.lower().translate(DIA)):
+        if raw in STOP or len(raw) < 2:
+            continue
+        st = stem(raw)
+        out.append(st)
+        if len(st) > PREFIX_LEN:
+            out.append("~" + st[:PREFIX_LEN])
+        c = concept(raw)
+        if c:
+            out.append(c)
+    return out
+
+
+def indexed_text(d, heading_weight=3):
+    """The point's own text plus its section heading repeated, so the law's
+    own filing ("KOHA E PROVËS") counts as retrieval signal."""
+    parts = [d["teksti"]]
+    if d.get("seksioni"):
+        parts += [d["seksioni"]] * heading_weight
+    return " ".join(parts)
+
+
+class BM25:
+    def __init__(self, docs, k1=1.4, b=0.72):
+        self.k1, self.b = k1, b
+        self.docs = docs
+        self.tf = [Counter(toks(indexed_text(d))) for d in docs]
+        self.len = [sum(c.values()) for c in self.tf]
+        self.avg = (sum(self.len) / len(self.len)) if self.len else 0
+        df = Counter()
+        for c in self.tf:
+            df.update(c.keys())
+        N = len(docs)
+        self.idf = {
+            w: math.log(1 + (N - n + 0.5) / (n + 0.5)) for w, n in df.items()
+        }
+
+    def search(self, q, top=8, limit_boost=1.35, value_boost=1.15, per_article=1):
+        """Lexical score, then re-rank toward points that STATE A LIMIT.
+
+        A clause can only conflict with a point that constrains something, so
+        when the job is finding violations, a point carrying a ceiling/floor
+        is more relevant than one merely discussing the same subject. Without
+        this, 'Neni 93 (when leave is taken)' outranks 'Neni 92/2 (minimum 22
+        days)' for a leave clause, and the actual limit never reaches the model.
+        """
+        qt = toks(q)
+        scores = []
+        for i, c in enumerate(self.tf):
+            s = 0.0
+            for w in qt:
+                f = c.get(w)
+                if not f:
+                    continue
+                dl = self.len[i] or 1
+                s += self.idf.get(w, 0) * (f * (self.k1 + 1)) / (
+                    f + self.k1 * (1 - self.b + self.b * dl / self.avg)
+                )
+            if s <= 0:
+                continue
+            d = self.docs[i]
+            if d.get("i_kontrollueshem"):
+                s *= limit_boost
+            if d.get("vlera"):
+                s *= value_boost
+            scores.append((s, i))
+        scores.sort(reverse=True)
+
+        # Diversity cap. Without it, four of eight slots go to four points of
+        # the same article and the model never sees the article that actually
+        # states the limit. One slot per article buys room for the others; a
+        # second pass fills any leftover slots with the best runners-up.
+        out, seen = [], {}
+        for s, i in scores:
+            a = self.docs[i]["neni"]
+            if seen.get(a, 0) >= per_article:
+                continue
+            seen[a] = seen.get(a, 0) + 1
+            out.append((s, self.docs[i]))
+            if len(out) >= top:
+                break
+        if len(out) < top:
+            chosen = {id(d) for _s, d in out}
+            for s, i in scores:
+                if id(self.docs[i]) not in chosen:
+                    out.append((s, self.docs[i]))
+                    if len(out) >= top:
+                        break
+        return out
+
+
+def load(path="kodi_punes_flagged.json", only_checkable=False):
+    d = json.load(open(path, encoding="utf-8"))
+    units = []
+    for a in d["nenet"]:
+        for p in a["pikat"]:
+            if only_checkable and not p.get("i_kontrollueshem"):
+                continue
+            ref = f"Neni {a['neni']}" + (f", pika {p['pika']}" if p["pika"] else "")
+            units.append({
+                "ref": ref,
+                "neni": a["neni"],
+                "pika": p["pika"],
+                "kreu": a.get("kreu"),
+                "seksioni": a.get("seksioni"),
+                "teksti": p["teksti"],
+                "temat": p.get("temat", []),
+                "i_kontrollueshem": p.get("i_kontrollueshem", False),
+                "vlera": p.get("vlera_numerike", []),
+                # carried through so a Verifier can be built from units alone:
+                # drejtimi() needs the ceiling/floor flags, and with several
+                # laws in the corpus the units are the only place that knows
+                # which law a provision came from.
+                "sinjale": p.get("sinjale") or {},
+                "ndryshuar_me": a["ndryshuar_me"],
+            })
+    return d["meta"], units
+
+
+if __name__ == "__main__":
+    meta, units = load()
+    idx = BM25(units)
+    print(f"indexed {len(units)} points from {meta['numri_neneve']} articles\n")
+
+    # the four test clauses, plus two that should find nothing useful
+    # expected = ANY of these articles is a correct governing citation
+    tests = [
+        ("Periudha e provës është 6 (gjashtë) muaj nga data e fillimit.",
+         {"142", "150"}),
+        ("Gjatë periudhës së provës, secila palë mund ta zgjidhë kontratën "
+         "me njoftim paraprak prej 3 (tre) ditësh.", {"142", "150"}),
+        ("Punëmarrësi do të punojë 50 orë në javë.", {"83", "90"}),
+        ("Paga bruto mujore është 85.000 lekë, e pagueshme brenda datës 10 "
+         "të muajit pasardhës.", {"111", "116"}),
+        ("Punëmarrësi ka të drejtë 10 ditë pushim vjetor të paguar.", {"92"}),
+        ("Kontrata përfundon me marrëveshje të palëve.", None),
+    ]
+
+    ok = n = 0
+    for q, expect in tests:
+        hits = idx.search(q, top=4)
+        print(f"KLAUZOLA: {q[:72]}")
+        if expect:
+            n += 1
+            got = [h["neni"] for _s, h in hits]
+            good = bool(expect & set(got))
+            ok += good
+            print(f"  [{'HIT ' if good else 'MISS'}] pritej nje nga "
+                  f"{sorted(expect)}, u gjet {got}")
+        for s, h in hits:
+            flag = "*" if h["i_kontrollueshem"] else " "
+            v = f" {h['vlera'][:3]}" if h["vlera"] else ""
+            print(f"   {flag} {s:5.2f}  {h['ref']:22s}{v}  {h['teksti'][:84]}")
+        print()
+    print(f"recall@4 = {ok}/{n}")

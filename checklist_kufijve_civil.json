@@ -1,0 +1,1476 @@
+{
+  "kufijte": [
+    {
+      "neni": "6",
+      "pika": null,
+      "kreu": "KREU I",
+      "temat": [
+        "te_mitur"
+      ],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Personit, kur mbush moshën tetëmbëdhjetë vjeç, i lind zotësia e plotë që me veprimet e tij të fitojë të drejta dhe të marrë përsipër detyrime civile. Zotësinë e plotë për të vepruar e fiton me anë të martesës edhe gruaja që nuk ka mbushur moshën tetëmbëdhjetë vjeç. Ajo nuk e humbet këtë zotësi edhe kur martesa është deklaruar e pavlefshme ose është zgjidhur para se të mbushë moshën tetëmbëdhjetë vjeç.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "39/1",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": true
+      },
+      "teksti": "Shoqata ka të drejtë të ketë në pronësi pasuri të luajtshme dhe të paluajtshme, të realizojë të ardhura nëpërmjet administrimit të këtyre pasurive, si dhe ushtrimit të veprimtarive të tjera, në përputhje me ligjin dhe me qëllimin e objektin e veprimtarisë së shoqatës, të parashikuar në statutin e saj. Të ardhurat e realizuara nga shoqata duhet të përdoren vetëm për realizimin e veprimtarive që parashikohen në qëllimin dhe objektin e veprimtarisë së parashikuar në statutin e saj. Nuk lejohet që shoqata të kryejë veprimtari fitimprurëse.",
+      "ndryshuar_me": [
+        {
+          "ligji": "8781",
+          "data": "3.5.2001",
+          "veprimi": "Shtuar"
+        }
+      ]
+    },
+    {
+      "neni": "48",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [],
+      "vlera": [
+        "gjashtë muaj"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": true,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "Pranimi i anëtarëve të rinj, që përmbushin kushtet e nevojshme, mund të lejohet në çdo kohë. E drejta për të dhënë dorëheqjen është e garantuar, por me kusht që të jetë paraqitur së paku gjashtë muaj para mbarimit të vitit kalendarik ose brenda afatit të parashikuar në statut.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "56/1",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": true
+      },
+      "teksti": "Fondacioni ka të drejtë të ketë në pronësi pasuri të luajtshme dhe të paluajtshme, të realizojë të ardhura nëpërmjet administrimit të këtyre pasurive, si dhe ushtrimit të veprimtariv e të tjera, në përputhje me ligjin dhe qëllimin e objektin e veprimtarive të parashikuara në statutin e fondacionit. Të ardhurat e realizuara nga fondacioni duhet të përdoren vetëm për realizimin e veprimtarive që parashikohen në qëllimin dhe objektin e veprimtarisë së parashikuar në statutin e tij. Nuk lejohet që fondacioni të kryejë veprimtari fitimprurëse.",
+      "ndryshuar_me": [
+        {
+          "ligji": "8781",
+          "data": "3.5.2001",
+          "veprimi": "Shtuar"
+        }
+      ]
+    },
+    {
+      "neni": "64",
+      "pika": null,
+      "kreu": "KREU I",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": true
+      },
+      "teksti": "Me përfaqësimin një person (përfaqësuesi) kryen, brenda tagreve që i janë dhënë nga ligji, nga prokura ose nga gjykata, veprime juridike në emër e për llogari të një personi fizik ose juridik tjetër (i përfaqësuari). Përfaqësimi nuk lejohet kur veprimi juridik duhet, sipas ligjit, të kryhet nga vetë personi. Nuk mund të veprojë si përfaqësues personi që nuk ka zotësi të plotë për të vepruar. Kufijtë dhe pasojat e përfaqësimit",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "72",
+      "pika": null,
+      "kreu": "KREU I",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": true
+      },
+      "teksti": "Prokura bëhet gjithmonë me shkresë. Çdo prokurë për të lidhur një kontratë, e cila sipas ligjit mund të bëhet vetëm me akt noterial, duhet të përpilohet në këtë formë, përndryshe është e pavlefshme. Edhe prokura për kryerjen e veprimeve para gjykatave dhe institucioneve të tjera shtetërore, duhet të bëhet me akt noterial, përveç kur me dispozita ligjore lejohet që ajo të bëhet me shkresë të thjeshtë. Prokura në emër të personave juridikë publikë e privatë mund të bëhet edhe vetëm me nënshkrimin e drejtuesit të tij dhe me vulën përkatëse, përveç kur ligji kërkon që veprimi juridik të kryhet me akt noterial.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "73",
+      "pika": null,
+      "kreu": "KREU I",
+      "temat": [
+        "paga"
+      ],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": true,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "Prokura për të tërhequr dërgesa postare ose para nga zyrat postare apo nga bankat deri në një shumë të caktuar prej tyre, prokura për të tërhequr paga dhe shpërblime të tjera që rrjedhin nga marrëdhëniet e punës, si dhe prokura për të tërhequr pensione, ndihma e bursa, mund të vërtetohen edhe nga: a) administratori i lagjes së qytetit ose kryeplaku i fshatit; b) drejtuesi i personit juridik apo i degës së tij, ku i përfaqësuari është në marrëdhënie pune ose ndjek shkollën; c) drejtuesi i institucionit shëndetësor ku i përfaqësuari është shtruar për mjekim; ç) komanda e repartit ushtarak ku shërben i përfaqësuari; d) drejtuesi i institucionit ku i përfaqësuari mbahet i arrestuar ose vuan dënimin me heqje të lirisë.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "75",
+      "pika": null,
+      "kreu": "KREU I",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "I përfaqësuari mund të shfuqizojë prokurën dhe përfaqësuesi të heqë dorë prej saj në çdo kohë. Çdo marrëveshje e kundërt është e pavlefshme. Mbarimi i prokurës",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "91",
+      "pika": null,
+      "kreu": "KREU I",
+      "temat": [
+        "pushimet"
+      ],
+      "vlera": [
+        "një ditë"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Kur afati është caktuar me ditë, nuk llogaritet dita në të cilën ndodh ngjarja ose koha nga e cila ai duhet të fillojë. Afati që është caktuar në javë, në muaj ose në vite, mbaron, me kalimin e asaj dite të javës së fundit ose të muajit të fundit që ka të njëjtin emër ose numër me atë të ditës që ai ka filluar. Kur një ditë e tillë mungon në muajin e fundit, afati mbaron me kalimin e ditës së fundit të këtij muaji. Kur dita e fundit e një afati bie në ditë pushimi, af ati mbaron në ditën e punës që vjen pas asaj të pushimit. Veprime juridike të pavlefshme",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "104",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [],
+      "vlera": [
+        "tre vjet"
+      ],
+      "sinjale": {
+        "kufi_maksimal": true,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "Afati për ngritjen e padisë fillon: a) për veprime juridike të kryera nga persona që u është hequr ose kanë patur zotësi juridike të kufizuar për të vepruar, që nga dita që janë bërë madhorë ose që u është kthyer zotësia për të vepruar; b) për veprime juridike të kryera me mashtrim, kanosje ose lajthim, nga dita që mashtrimi ose lajthimi janë zbuluar, ose kanosja ka pushuar, por në çdo rast, jo më shumë se tre vjet nga dita që është kryer veprimi juridik; c) në raste të tjera, që nga dita që është kryer veprimi juridik.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "111",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Kur shkaku i pavlefshmërisë prek vetëm një pjesë të veprimit juridik, ky mbetet i vlefshëm në pjesët e tjera të tij, përveç kur, sipas përmbaj tjes së veprimit juridik, këto pjesë paraqesin marrëdhënie të pandashme me pjesën e pavlefshme të veprimit juridik. Përmbajtja",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "116",
+      "pika": null,
+      "kreu": "KREU I",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Është e pavlefshme marrëveshja e palëve për ndryshimin e afateve të parashkrimit dhe e çdo dispozite të këtij kreu.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "130",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [],
+      "vlera": [
+        "gjashtë muaj",
+        "gjashtë muaj"
+      ],
+      "sinjale": {
+        "kufi_maksimal": true,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "Koha e pezullimit nuk llogaritet në afatin e parashkrimit. Kur pas zhdukjes së shkakut pezullues, koha që mbetet për t’u plotësuar parashkrimi është më e shkurtër se gjashtë muaj, ajo zgjatet deri në gjashtë muaj. B. Ndërprerja e parashkrimit",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "138",
+      "pika": null,
+      "kreu": "KREU III",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Është e pavlefshme çdo marrëveshje me të cilën janë caktuar afate prekluzive, që e bëjnë tejet të vështirë për njërën nga palët ushtrimin e së drejtës përkatëse.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "161",
+      "pika": null,
+      "kreu": "KREU I",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": true
+      },
+      "teksti": "Pronari është i detyruar të mbledhë ujërat që rrjedhin nga strehët e ndërtesave të tij, në mënyrë që ato të mos pikojnë mbi tokën e tjetrit. Derdhja e tyre në një rrjedhë publike mund të bëhet kur nuk ndalohet nga rregullat që kanë caktuar organet kompetente. Pronari është i detyruar të kujdeset që ujërat dhe mbeturinat që vijnë nga toka e tij të mos derdhen në kanalin ose në tokën e tjetrit, përveç kur ndërmjet tyre ka marrëveshje të kundërt. Kalimi i pronësisë",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "162",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "E drejta e pronësisë dhe të drejta të tjera mbi sendet janë të transferueshme, përveç kur ndalohet nga ligji ose nga vetë natyra e së drejtës. Mënyra e fitimit të pronësisë",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "168",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [],
+      "vlera": [
+        "pesë vjet",
+        "dhjetë vjet"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Personi që ka fituar me mirëbesim një send, në bazë të një veprimi juridik për kalimin e pronësisë dhe që nuk është i ndaluar nga ligji, bëhet pronar i këtij sendi, pas një posedimi të pandërprerë prej pesë vjetësh kur sendi është i luajtshëm dhe prej dhjetë vjetësh kur ai është i paluajtshëm. Kur posedimi nuk është me mirëbesim, afatet e posedimit të pandërprerë dyfishohen. Posedimi konsiderohet i pandërprerë edhe kur fituesi i sendit ia ka dhënë posedimin një personi tjetër. Nuk mund të fitohet me parashkrim fitues një send që është pronë publike e patjetërsueshme.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "175",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [
+        "afati_i_njoftimit",
+        "pushimet"
+      ],
+      "vlera": [
+        "gjashtë muaj"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Kur ndërtesat e veprat e tjera dhe mbjelljet janë bërë nga një person i tretë me materialet e veta në tokën e tjetrit, pronari përkatës ka të drejtë t’i mbajë ato ose të kërkojë detyrimin e atij që i ka bërë t’i heqë ato me shpenzimet e tij, dhe kur është rasti të shpërblejë dëmin. Kur pronari i tokës pranon t’i mbajë, detyrohet të paguajë vleftën e materialeve dhe të krahut të punës ose rritjen e vleftës që i është bërë pronës. Pronari i tokës nuk mund t’i kërkojë heqjen e ndërtimeve e të mbjelljeve të kryera kur ato janë bërë me dijeninë e tij, ose me mirëbesim nga personi i tretë, si dhe kur kanë kaluar gjashtë muaj që nga dita kur pronari ka marrë njoftim për këto ndërtime e mbjellje. Kur me mirëbesim është ngritur një ndërtesë në tokën e huaj dhe vlefta e saj është më e madhe se vlefta e tokës, personi që ka ngritur ndërtesën mund të njihet pronar edhe i tokës, me vendim të gjykatës kompetente.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "183",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [
+        "paga"
+      ],
+      "vlera": [
+        "10 %",
+        "gjashtë muaj"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Pronari ose personi, të cilit i ka humbur sendi, ka të drejtë ta kërkojë atë brenda gjashtë muajve nga dita që është shpallur gjetja në bashkinë apo komunën përkatëse, pasi të ketë paguar shpenzimet e bëra për ruajtjen e sendit dhe një shpërblim për personin që ka gjetur sendin në masën 10% të vleftës së sendit, ose të çmimit të marrë, kur sipas rrethanave të paraqitura, shitja e tij ka qenë e domosdoshme. Kur ka kundërshtime për vleftën e sendit, mosmarrëveshja zgjidhet nga gjykata. Bashkia ose komuna mund të lejojë mbajtjen përkohësisht të sendit nga personi që e ka gjetur, të cilit i paguhen dhe shpenzimet e bëra për ruajtjen e sendit. Sendet e humbura duhet të ruhen dhe të mirëmbahen me kujdesin e duhur. Fitimi i pronësisë nga personi që ka gjetur sendin",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "204",
+      "pika": null,
+      "kreu": "KREU I",
+      "temat": [
+        "forma_e_kontrates"
+      ],
+      "vlera": [
+        "tre muaj"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Bashkëpronari, para se t’ia shesë pjesën e vet në sendin e paluajtshëm një personi që nuk është bashkëpronar, detyrohet të njoftojë me shkrim bashkëpronarët e tjerë nëse dëshirojnë të blejnë pjesën me të njëjtat kushte që do t’ia shesë personit të tretë. Në rast se këta nuk përgjigjen brenda tre muajve se dëshirojnë të blejnë pjesën, bashkëpronari është i lirë të shesë pjesën e tij në persona të tretë. Ai duhet t’ua bëjë të njohur bashkëpronarëve të tjerë bashkëpronarin e ri. E drejta e kreditorit mbi pjesën e bashkëpronarit",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "211",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Objektet e përbashkëta të ndërtesës nuk lejohet të ndahen, përveç kur ndarja e ndonjërit prej tyre mund të kryhet pa ia vështirësuar përdorimin e tij asnjërit nga bashkëpronarët. Përbërja e asamblesë dhe zgjedhja e kryesisë",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "213",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [],
+      "vlera": [
+        "20 %"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": true,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "Pas mbledhjes së parë organizuese, mbledhjet e asamblesë thirren një herë në vit. Mbledhje të tjera të asamblesë mund të thirren nga kryesia e saj ose me nismën e jo më pak se 20% të anëtarëve të saj. Asambleja mund të çelet dhe të marrë vendime kur janë të pranishëm personalisht ose të përfaqësuar me prokurë bashkëpronarët, të cilët kanë të paktën dy të tretat e tërësisë së kuotave. Kur ky numër nuk është i pranishëm, mbledhja shtyhet dhe mbledhja pasardhëse zhvillohet në rast se merr pjesë shumica e zakonshme e bashkëpronarëve. Vendimet e asamblesë merren me shumicë të thjeshtë votash të bashkëpronarëve, përveç rasteve kur në dispozitat e këtij kreu ose me dispozita të veçanta kërkohet një shumicë e cilësuar. Kur numri i votave është i barabartë, vota e kryetarit është vendimtare. Kompetencat kryesore të asamblesë",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "214",
+      "pika": 3,
+      "kreu": "KREU II",
+      "temat": [],
+      "vlera": [
+        "75 %"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": true,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "Miraton preventivat e shpenzimeve që ka vendosur të kryhen gjatë vitit, si dhe ndarjen e shumës së tyre midis bashkëpronarëve. Shpenzimet e përbashkëta për mirëmbajtjen, riparimet dhe përmirësimet e zakonshme të këtyre objekteve miratohen nga asambleja me shumicë të thjesht ë votash, ndërsa shpenzimet për përmirësime të mëdha ose rinësime cilësore vendosen me shumicë të cilësuar të bashkëpronarëve që arrijnë të paktën 75% të kuotave përkatëse.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "219",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Ndalohet dhënia e lejes për kryerjen e shtesave ose veprave të tilla mbi katin e fundit në qoftë se kushtet statike të ndërtesës nuk e lejojnë. Bashkëpronarët mund të kundërshtojnë lejen e dhënë nga organi kompetent shtetëror për kryerjen e shtesave ose veprave të tilla mbi katin e fundit dhe kur provohet se ato pakësojnë ajrin apo dritën për katet e mëposhtme ose cenojnë pamjen arkitektonike të ndërtesës.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "244",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [],
+      "vlera": [
+        "pesë vjet"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Uzufruktari ka të drejtë të japë me qira sendet në uzufrukt përveç kur është parashikuar ndryshe në aktin e krijimit të tij. Kur mbaron uzufrukti, pronari duhet të respektojë qiranë e filluar normalisht më parë, përveç kur zgjatja e afatit të saj është bërë pa pëlqim in e tij. Kur uzufruktari ose qiramarrësi i kanë kërkuar pëlqimin pronarit për qiradhënien dhe ky nuk është përgjigjur në afatin e caktuar, quhet se pëlqimi është dhënë. Kur pushon uzufrukti, qiradhëniet për një afat mbi pesë vjet, kanë vlerë vetëm për pes ë vjet nga dita që ka filluar qiradhënia. Gëzimi i servituteve",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "293",
+      "pika": null,
+      "kreu": "KREU V",
+      "temat": [],
+      "vlera": [
+        "dhjetë vjet"
+      ],
+      "sinjale": {
+        "kufi_maksimal": true,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "Servitutet shuhen: a) Kur në një person të vetëm bashkohet pronësia e pronës mbizotëruese me atë të pronës shërbyese. b) Kur nuk përdoret për më shumë se dhjetë vjet. Afati i parashkrimit për servitutet jovijuese fillon të ecë nga dita kur servituti ka pushuar së përdoruri, ndërsa për servitutet vijuese nga dita kur është kryer një vepër ose është vërtetuar një fakt që pengon ushtrimin e servitutit. Për efekt të shuarjes së servitutit, llogaritet edhe koha që ai është ushtruar nga titullari i mëparshëm. c) Kur sendet dëmtohen ose konsumohen deri në një shkallë sa nuk mund të përdoren për qëllimin e tyre. Rikthimi në një gjendje që mund të përdoren sjell si rrjedhim edhe rivendosjen e servituteve, përveç kur kjo e drejtë është parashkruar.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "319",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Është e pavlefshme çdo marrëveshje me të cilën disponohen ose përdorohen të drejta që rrjedhin nga një trashëgim ende i paçelur. Zotësia për të trashëguar",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "336",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [],
+      "vlera": [
+        "gjashtë muaj"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": true,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Kur nuk dihet a ka trashëgimtarë, ose kur trashëgimtarët mungojnë dhe nuk ka lajme për ta, noteri i njësisë vendore ku është çelur trashëgimia, kryesisht ose me kërkesën e çdo të interesuari, cakton një afat, jo më pak se gjashtë muaj nga çelja e trashëgim isë, brenda të cilit ata duhet të deklarojnë në se heqin dorë nga trashëgimi. Në qoftë se brenda këtij afati nuk bëhet ndonjë deklarim i tillë, prezumohet se trashëgimlënësi nuk ka lënë trashëgimtarë.",
+      "ndryshuar_me": [
+        {
+          "ligji": "121/2013",
+          "data": "18.4.2013",
+          "veprimi": "Ndryshuar"
+        }
+      ]
+    },
+    {
+      "neni": "337",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Heqja dorë nga trashëgimi, e bërë para çeljes së trashëgimisë, ose kur bëhet me kusht, me afat, ose për një pjesë të trashëgimit, apo në dobi të njërit nga trashëgimtarët e tjerë, është e pavlefshme.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "363",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [],
+      "vlera": [
+        "1 vit"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": true,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "Në radhë te dytë thirren në trashëgim prindërit e trashëgimlënësit dhe personat e paaftë për punë, të cilët të paktën 1 vit para vdekjes së trashëgimlënësit, bashkëjetonin me atë si anëtarë të familjes dhe në ngarkim të tij.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "479",
+      "pika": null,
+      "kreu": "KREU II",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Çdo marrëveshje që përjashton ose kufizon palët nga përgjegjësia për mosekzekutimin e detyrimeve është e pavlefshme.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "499",
+      "pika": null,
+      "kreu": "KREU III",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Kreditori mund t’ia kalojë kredinë e vet një personi tjetër edhe pa miratimin e debitorit, me kusht që kredia të mos ketë karakter të ngushtë personal dhe kalimi të mos jetë ndalur nga ligji. Veçanërisht nuk lejohet kalimi i kredisë një personi tjetër, kur rrjedh nga shkaktimi i vdekjes ose i dëmtimit të shëndetit, si dhe i kredive që nuk mund të sekuestrohen. Palët në një marrëveshje mund të përjashtojnë kalimin e kredisë, por marrëveshja nuk mund t’i kundrejtohet atij që i kalon kredia po të mos provohet se ai e njihte atë në momentin e kalimit. Dispozitat për kalimin e kredisë nuk zbatohen ndaj kredive që lidhen me transaksione financiare, ndaj të cilave janë vendosur barrë siguruese, sipas kritereve të përcaktuara me ligj të veçantë.",
+      "ndryshuar_me": [
+        {
+          "ligji": "8536",
+          "data": "18.10.1999",
+          "veprimi": "Shtuar"
+        }
+      ]
+    },
+    {
+      "neni": "506",
+      "pika": null,
+      "kreu": "KREU III",
+      "temat": [
+        "pushimet"
+      ],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": true
+      },
+      "teksti": "Kreditori që kalon kredinë nuk përgjigjet për paaftësinë paguese të debitorit, përveç kur ka marrë përsipër garancinë. Në këtë rast përgjigjet për aq sa ka marrë. Veç kësaj duhet të përgjigjet për kamatat, për shpenzimet e kalimit, dhe ato që personi që i ka kaluar kredia ka bërë për ndjekjet ligjore ndaj debitorit dhe të shpërblejë dëmin. Marrëveshja që synon të rëndojë përgjegjësinë e personit që kalon kredinë, është e pavlefshme. Kur kreditori që kalon kredinë ka garantuar aftësinë paguese të debitorit, garancia pushon, në qoftë se mosekzekutimi i kredisë për paaftësi paguese të debitorit ka ardhur nga pakujdesia e kreditorit të ri për të ndjekur çështjen ndaj debitorit.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "510",
+      "pika": null,
+      "kreu": "KREU IV",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Përtëritja është e pavlefshme në rast se detyrimi fillestar është i pavlefshëm. Kur detyrimi fillestar rrjedh nga një titull i anulueshëm, përtëritja është e vlefshme në rast se debitori ka marrë përsipër detyrimin e ri, duke njohur vesin e titullit fillestar. Falja e detyrimit",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "540",
+      "pika": null,
+      "kreu": "KREU I",
+      "temat": [
+        "paga"
+      ],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Është e pavlefshme marrëveshja sipas së cilës përcaktohet se në mungesë të pagesës së kredisë në afatin e caktuar, pronësia mbi sendin e hipotekuar ose të dhënë peng i kalon kreditorit.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "547",
+      "pika": null,
+      "kreu": "KREU III",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": true
+      },
+      "teksti": "Kontrata e pengut duhet të bëhet me shkresë ose tek noteri, ndryshe është e pavlefshme. Ajo duhet të përfshijë gjithashtu një përshkrim të pronës së lënë peng. Në rastin e pengut të pjesëve, pengu duhet të regjistrohet në librin e anëtarëve të shoqërisë. Në rastin e pengut të aksioneve, pengu duhet të regjistrohet në librin e aksionarëve, në aksionet e lëna peng. Mund të lihet peng e gjitha ose një pjesë e pronave të përdorura në një ndërmarrje që vepron si një koncern veprues. Në një rast të tillë pengu është efektiv kur pronat i besohen një pale të tretë ose një kreditori, i cili nga ana e tij, do t’i menaxhojë ato si një koncern veprues i pandashëm. Mbrojtja e kreditorit",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "556",
+      "pika": null,
+      "kreu": "KREU III",
+      "temat": [
+        "afati_i_njoftimit"
+      ],
+      "vlera": [
+        "pesë ditë"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Përpara se të procedohet për shitjen kreditori, me anë të gjykatës, i paraqet debitorit kërkesën për të paguar detyrimin dhe aksesorët e tij duke e paralajmëruar atë se në rast të kundërt do të kryhet shitja. Ky njoftim i duhet bërë edhe palës së tretë që ka dhënë pengun, në rastet kur kjo palë ekziston. Në qoftë se kërkesa nuk kundërshtohet brenda pesë ditësh, kreditori mund ta shesë sendin në ankand ose, po qe se sendi ka një çmim tregu, mund ta shesë atë edhe me këtë çmim, me anë të një personi të autorizuar për shitje të tilla. Kur pengu përfshin shumë sende, gjykata, e mbështetur në kundërshtimin e pengdhënësit, kufizon shitjen vetëm për sendin, vlefta e të cilit në lidhje me sendet e tjera, mjafton për të paguar debinë. Për shitjen e sendit të dhënë peng palët mund të merren vesh për të përdorur edhe forma të tjera.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "572",
+      "pika": null,
+      "kreu": "KREU IV",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Hipoteka është e pavlefshme, kur në kontratën e hipotekës, ose në aktin bazë për vënien e hipotekës, apo në kërkesën për vënien e saj, në bazë të ligjit, ka pasaktësi për personin e kreditorit, të debitorit, të pronarit të sendit të lënë në hipotekë, për vetë sendin ose për shumën e kredisë të siguruar me hipotekë. Shpenzimet e regjistrimit",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "582",
+      "pika": null,
+      "kreu": "KREU IV",
+      "temat": [
+        "paga"
+      ],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": true,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "Kërkesa për zbritjen e hipotekave sipas nenit të mësipërm nuk pranohet, në qoftë se sasia e pasurisë apo shuma ka qenë caktuar me marrëveshje ose me vendim gjykate. Megjithatë, kur janë bërë pagesa të pjesshme, që shuajnë të paktën një të pestën e detyrimit fillestar, mund të kërkohet një pakësim përpjesëtimor i shumës. Kur është vënë hipotekë mbi një ndërtesë, hipotekuesi që pas regjistrimit ka bërë mbindërtime, mund të kërkojë që hipoteka të pakësohet, në mënyrë që mbindërtimet të përjashtohen. Shuarja e hipotekës",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "605",
+      "pika": null,
+      "kreu": "KREU VI",
+      "temat": [
+        "paga"
+      ],
+      "vlera": [
+        "12 muaj",
+        "dy vjet"
+      ],
+      "sinjale": {
+        "kufi_maksimal": true,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "Paguhen me preferim, sipas radhitjes së tyre kreditë e mëposhtme: a) kreditë që rrjedhin nga transaksionet financiare të siguruara me barrë siguruese për çmimin e blerjes së një objekti të veçantë; b) kreditë që rrjedhin nga pagat në marrëdhëniet e punës ose të shërbimit dhe detyrimet për ushqim, por jo më shumë se për 12 muaj; c) kreditë e sigurimeve shoqërore për kontributet e papaguara së bashku me kamatat, si dhe kreditë e punonjësve për dëmet e pësuara nga mospagimi prej punëdhënësit të kontributeve të mësipërme; ç) kreditë që rrjedhin nga shpërblime për shkak vdekjeje e dëmtimi të shëndetit; d) kreditë e autorëve dhe të trashëgimtarëve të tyre për shpërblimet që rrjedhin nga tjetërsimi i plotë ose i pjesshëm i të drejtave të tyre në fushën intelektuale për detyrimet e lindura gj atë dy vjetëve të fundit; dh) kreditë e shtetit, që rrjedhin nga detyrimet ndaj buxhetit dhe kreditë e institutit të sigurimeve shtetërore për sigurimet e detyrueshme, të përcaktuara me ligj; e) kreditë, që rrjedhin nga transaksionet financiare, të siguruara me barrë siguruese, sipas kritereve të përcaktuara me ligj; ë) kreditë, që rrjedhin nga pagat në marrëdhëniet e punës ose të shërbimit dhe detyrimet për ushqim tej kufirit të caktuar në shkronjën “b” të këtij neni; f) shpërblimi i ndërmjetësimit që rrje dh nga kontrata e agjencisë, kur ai rrjedh gjatë vitit të fundit të shpërblimit; g) kreditë e siguruara me hipotekë ose me peng që nuk krijojnë barrë siguruese, sipas ligjit, nga vlefta e sendeve në hipotekë ose të lëna peng; gj) kreditë që rrjedhin nga shpenzimet e gjyqit për ruajtjen e sendit dhe ato për veprime ekzekutive, të bëra në interesin e përbashkët të kreditorëve, nga vlefta e shitjes së sendeve; h) kreditë e dhëna nga bankat, të cilat nuk përfshihen në shkronjën “e” dhe kreditë që rrjedhin nga sigurimet vullnetare; i) kreditë për furnizimin me farëra, plehra kimike, insekticide, ujë për ujitje dhe për punimet e kultivimit e të mbledhjes së prodhimeve bujqësore, mbi prodhimin (frutet) bujqësor të vitit, për të cilin janë përdorur kreditë. Kur ka disa kredi sipas shkronjës “a” dhe shkronjës “e” të këtij neni, radha e preferimit, përcaktohet sipas kritereve të përcaktuar me ligj të veçantë. Kur ligji i veçantë nuk i jep një kredie sipas shkronjës “a” preferim mbi kreditë sipas shkronjës “e”, kredi a sipas shkronjës “a” do të preferohet sipas shkronjës “e”. Përjashtohen nga radha e preferimit sipas këtij neni kreditë sipas shkronjës “e”, që janë dhënë aktualisht, të cilat do të preferohen përpara kredive sipas shkronjës “dh” në rastet që vijojnë: - kredia sipas shkronjës “e” është regjistruar sipas ligjit, ndërsa kredia sipas shkronjës “dh” nuk është regjistruar; - kredia sipas shkronjës “e” është regjistruar sipas ligjit, përpara regjistrimit të kredisë sipas shkronjës “dh”. Radha e preferimit, e par ashikuar në këtë nen, nuk zbatohet në procedurën e falimentimit, parashikuar me ligj të veçantë.",
+      "ndryshuar_me": [
+        {
+          "ligji": "8536",
+          "data": "18.10.1999",
+          "veprimi": "Ndryshuar"
+        },
+        {
+          "ligji": "113/2016",
+          "data": "3.11.2016",
+          "veprimi": "Ndryshuar"
+        }
+      ]
+    },
+    {
+      "neni": "610",
+      "pika": null,
+      "kreu": "KREU I",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Është e pavlefshme marrëveshja që paraprakisht përjashton ose kufizon përgjegjësinë e personit që ka kryer dëm me faj.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "672",
+      "pika": null,
+      "kreu": "KREU I",
+      "temat": [
+        "forma_e_kontrates"
+      ],
+      "vlera": [
+        "shtatë ditë",
+        "një vit"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Pala kontraktuese mund të heqë dorë nga kontrata, brenda shtatë ditëve nga përfundimi i saj, pa treguar arsyet, kur: - kontrata është përfunduar në vendin e punës ose të banimit të njërës palë, gjatë një eskursioni të organizuar në një mjedis publik , ose në kushte të tilla, që nuk i korrespondon një situate normale bisedimesh; - në kontratën që ka për objekt dhënien e një kredie për të blerë një send konsumi, shitësi duhet të njoftojë me shkrim blerësin për të drejtën e heqjes dorë nga kontrata e lidhur në kushtet e sipërme, për ndryshe afati i heqjes dorë është një vit.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "701",
+      "pika": null,
+      "kreu": "KREU III",
+      "temat": [
+        "afati_i_njoftimit"
+      ],
+      "vlera": [
+        "tri ditë"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Në qoftë se afati i caktuar për kryerjen e detyrimit të njërës nga palët duhet quajtur thelbësor për interesin e palës tjetër, kjo e fundit kur dëshiron të kërkojë zbatimin pavarësisht nga mbarimi i afatit, duhet t’i bëjë njoftimin palës tjetër brenda tri ditëve, përveç marrëveshjes së kundërt.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "725",
+      "pika": 1,
+      "kreu": "KREU I",
+      "temat": [
+        "afati_i_njoftimit"
+      ],
+      "vlera": [
+        "15 ditë"
+      ],
+      "sinjale": {
+        "kufi_maksimal": true,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "në rastin e dorëzimit të vonuar blerësi nuk ka kërkuar zgjidhjen e kontratës brenda një kohe të arsyeshme, por jo më shumë se 15 ditë nga momenti kur ka marrë dijeni se dorëzimi është kryer;",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "725",
+      "pika": 2,
+      "kreu": "KREU I",
+      "temat": [],
+      "vlera": [
+        "15 ditë"
+      ],
+      "sinjale": {
+        "kufi_maksimal": true,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "në rast mospërmbushje të ndryshme nga dorëzimi i vonuar, brenda një kohe të arsyeshme, por jo më shumë se 15 ditë: a) nga momenti kur ka marrë dijeni ose duhej të kishte dijeni për mospërmbushje; b) pas mbarimit të afatit shtesë eventualisht të caktuar prej tij sipas nenit 717 të këtij Kodi.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "750",
+      "pika": null,
+      "kreu": "KREU I",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Shitja e sendeve të paluajtshme kryhet sipas mënyrave të parashikuara në nenin 83 të këtij Kodi, përndryshe është e pavlefshme.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "771",
+      "pika": null,
+      "kreu": "KREU III",
+      "temat": [
+        "afati_i_njoftimit",
+        "paga",
+        "te_mitur"
+      ],
+      "vlera": [
+        "një vit"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": true
+      },
+      "teksti": "Dhuruesi, për dhurimet që nuk janë të zakonshme ose që nuk janë bërë për shpërblim, mund të kërkojë revokimin e dhurimit kur ai që ka marrë dhurimin: a) me dashje ka vrarë ose ka tentuar të vrasë dhuruesin, bashkëshortin ose fëmijët, ose prindërit e tij; b) pa të drejtë nuk i jep dhuruesit ushqim kur është i detyruar sipas ligjit. Padia për revokimin e dhurimit duhet të ngrihet brenda një viti nga dita që dhuruesi ka marrë njoftim për shkaqet që i japin të drejtë që të kërkojë revokimin e dhurimit. Padia e filluar mund të vazhdohet edhe nga trashëgimtarët e dhuruesit ose mund të ngrihet nga vetë këta, në rast se dhuruesi ka vdekur brenda vitit, nga dita që ka lindur shkaku për të ngritur padinë. Heqja dorë që më parë nga padia është e pavlefshme. Revokimi i dhurimit nuk cenon të drejtat që ka në fituar të tretët mbi sendin e dhuruar para se të ngrihet padia.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "789",
+      "pika": null,
+      "kreu": "KREU V",
+      "temat": [
+        "paga"
+      ],
+      "vlera": [
+        "një vit"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Kur prona në enfiteozë humbet tërësisht, enfiteoza shuhet dhe enfiteozëmarrësi shkarkohet nga detyrimi përkatës për të ardhmen. Kur prona humbet ose dëmtohet në pjesë të dukshme e të rëndësishme të saj, aq sa nuk mund të sigurohen të ardhura sa të shlyhet shpërblimi i caktuar n ë kontratë, mund të kërkohet një ulje e tij ose prishja e kontratës, duke shlyer palët detyrimet reciproke. Kërkesa duhet të bëhet brenda një viti nga dita që ka ndodhur humbja ose dëmtimi i pronës në enfiteozë. Enfiteozëmarrësi nuk mund të kërkojë shkarkimin nga detyrimi për pagimin e shpërblimit ose uljen e tij, për shkak mosprodhimi ose humbje të fryteve, qoftë edhe për rast fator.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "790",
+      "pika": null,
+      "kreu": "KREU V",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Dhënia e pronës në nënenfiteozë nuk lejohet.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "792",
+      "pika": null,
+      "kreu": "KREU V",
+      "temat": [
+        "paga"
+      ],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": true,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "Tatimet dhe detyrimet e tjera që rëndojnë mbi pronën janë në ngarkim të enfiteozëmarrësit, përveç kur në ligj parashikohet ndryshe. Kur në kontratë këto detyrime janë lënë në ngarkim të pronarit, ato nuk mund të kalojnë shpërblimin e caktuar për enfiteozën.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "796",
+      "pika": null,
+      "kreu": "KREU V",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Enfiteozëmarrësi ka të drejtë të mbajë sendin e dhënë në enfiteozë, deri në s hlyerjen e kredive që rrjedhin prej saj. Çdo marrëveshje e kundërt është e pavlefshme. Pronari ka të drejtë të mbajë sendet që i takojnë enfiteozëmarrësit deri në shlyerjen e detyrimeve ndaj tij.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "799",
+      "pika": null,
+      "kreu": "KREU V",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Dispozitat e këtij kreu zbatohen edhe kur enfiteoza gëzohet nga një ose disa persona juridikë, përveç kur ajo ndalohet nga ligji.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "803",
+      "pika": null,
+      "kreu": "KREU VI",
+      "temat": [
+        "koha_e_punes"
+      ],
+      "vlera": [
+        "pesë vjet",
+        "një vit"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Qiraja nuk mund të lidhet për një kohë më të gjatë se tridhjetë vjet, përveç kur parashikohet ndryshe nga ligji. Në qoftë se ajo është lidhur për një periudhë kohe më të gjatë ose pa afat, ka fuqi vetëm për afatin e sipërm. Për ndërtesat që përdoren për banim, kontrata e qirasë nuk mund të lidhet për një kohë më të gjatë se pesë vjet. Për sende të luajtshme të dhëna për pajisjen e një sendi të paluajtshëm, afati është baraz me kohëzgjatjen e qirasë së këtij të fundit. Kontrata e qirasë, për një kohë më të gjatë se një vit, duhet bërë me shkresë.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "819",
+      "pika": null,
+      "kreu": "KREU VI",
+      "temat": [
+        "afati_i_njoftimit"
+      ],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Qiradhënësi, pa cenuar të drejtat e tij ndaj qiramarrësit, mund të ngrejë padi kundër nënqiramarrësit për të kërkuar çmimin e nënqirasë për të cilën ky i fundit është ende debitor në momentin e ngritjes së padisë dhe për ta detyruar atë të përmbushë të gjitha detyrimet e tjera që rrjedhin nga kontrata e nënqirasë. Shpallja e pavlefshme e kontratës së qirasë ose zgjidhja e saj ka efekt edh e ndaj nënqiramarrësit, dhe vendimi i marrë midis qiradhënësit dhe qiramarrësit ka efekt edhe ndaj tij. Mbarimi i kontratës së qirasë",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "822",
+      "pika": null,
+      "kreu": "KREU VI",
+      "temat": [],
+      "vlera": [
+        "9 vjet"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Kontrata e qirasë mund t’i kundrejtohet të tretit që ka fituar sendin e dhënë me qira, me kusht që kontrata të ketë një datë të saktë para tjetërsimit të sendit. Dispozitat e paragrafit të mësipërm nuk zbatohen për qiranë e sendeve të luajtshme të paregjistruara në regjistrat publikë, në qoftë se fituesi ka siguruar posedimin me mirëbesim. Qiraja e sendeve të paluajtshme të paregjistruara nuk i kundrejtohet fituesit të tretë, veç brenda afatit të 9 vjetëve nga fillimi qirasë. Fituesi duhet të respektojë qiranë në çdo rast në qoftë se ka marrë përsipër detyrimin ndaj tjetërsuesit.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "826",
+      "pika": null,
+      "kreu": "KREU VI",
+      "temat": [],
+      "vlera": [
+        "nëntë vjet"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Kontrata e qirasë të pasurisë së paluajtshme që shërben për kultivimin bujqësor për një kohë mbi nëntë vjet, duhet të bëhet me akt noterial dhe të regjistrohet në regjistrin publik.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "837",
+      "pika": null,
+      "kreu": "KREU VI",
+      "temat": [],
+      "vlera": [
+        "një vit"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": true,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "Qiramarrësi mund të kërkojë uljen e çmimit të qirasë ose shtyrjen e pagimit të saj, kur rrethana të paparashikuara ose ngjarje të jashtëzakonshme e kanë ulur prodhimtarinë e një viti në të paktën gjysmën në krahasim me prodhimtarinë normale.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "840",
+      "pika": null,
+      "kreu": "KREU VI",
+      "temat": [
+        "paga"
+      ],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": true,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "Qiramarrësi nuk gëzon të drejtën e marrjes së frutave, të cilat në kohën e përfundimit të kontratës, ende nuk ishin vjelë. Por gjykata mund të pranojë që qiramarrësit t’i paguhen shpenzimet që mund të ketë bërë për kultivimin e frutave. Gjithsesi ky shpërblim nuk mund të kalojë vlerën e frutave që përfiton qiramarrësi. B. Qiraja e sendeve prodhuese",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "864",
+      "pika": null,
+      "kreu": "KREU VII",
+      "temat": [
+        "afati_i_njoftimit"
+      ],
+      "vlera": [
+        "60 ditë",
+        "60 ditë",
+        "dy vjet",
+        "dy vjet"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Sipërmarrësi detyrohet të japë garanci për deformimet dhe veset e veprës. Garancia nuk kërkohet kur porositësi e ka pranuar veprën dhe deformimet ose veset njiheshin prej tij ose ishin të dallueshme, përveç kur ato janë fshehur me keqbesim nga sipërmarrësi. Porositësi duhet t’i njoftojë sipërmarrësit deformimet ose veset brenda 60 ditëve nga zbulimi i tyre me kusht dekadence, që sjell humbjen e kësaj të drejte. Njoftimi nuk është i domosdoshëm kur sipërmarrësi i ka njohur e pranuar deformimet dhe veset ose kur i ka fshehur ato. Padia kundër sipërmarrësit parashkruhet brenda dy vjetëve nga dat a e dorëzimit të veprës. Porositësi i paditur për pagim mund të zbatojë gjithmonë garancinë, me kusht që deformimet dhe veset të njoftohen brenda 60 ditëve nga data e zbulimit dhe para se të kenë kaluar dy vjet nga data e dorëzimit.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "957",
+      "pika": null,
+      "kreu": "KREU XIII",
+      "temat": [
+        "afati_i_njoftimit",
+        "koha_e_punes",
+        "pushimet",
+        "paga",
+        "kontrata_me_afat",
+        "konkurrenca"
+      ],
+      "vlera": [
+        "4 muaj",
+        "5 muaj",
+        "6 muaj",
+        "një muaj",
+        "dy muaj",
+        "tre muaj",
+        "pesë vite",
+        "pesë vjet",
+        "një vit"
+      ],
+      "sinjale": {
+        "kufi_maksimal": true,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Mbarimi dhe zgjidhja e kontratës së agjencisë Kontrata e agjencisë me kohë të caktuar kur vazhdon të zbatohet nga palët edhe pas mbarimit të kohës, shndërrohet në kontratë me afat të pacaktuar. Nëse kontrata e agjencisë është me kohë të pacaktuar, secila nga palët mund të tërhiqet nga kjo kontratë, duke njoftuar paraprakisht palën t jetër brenda një afati të caktuar. Afati i njoftimit paraprak nuk mund të jetë më i shkurtër se një muaj për vitin e parë të kohëzgjatjes së kontratës, dy muaj për vitin e dytë të filluar, tre muaj për vitin e tretë të filluar, 4 muaj për vitin e katërt, 5 muaj për vitin e pestë dhe 6 muaj për vitin e gjashtë dhe për të gjitha vitet në vazhdim. Nëse palët merren vesh për afate paralajmërimi më të gjata, afati i paralajmërimit që duhet të respektojë pala porositëse nuk duhet të jetë më i shkurtër se afati që duhet të respektojë agjenti. Përveç kur me marrëveshje është caktuar ndryshe nga palët, mbarimi i afatit të paralajmërimit duhet të përkojë me ditën e fundit të muajit kalendarik. Të njëjtat rregulla zbatohen dhe për kontratën e agjencisë me kohë të përcaktuar, të shndërruar në kontratë me kohë të papërcaktuar, me kushtin që në llogaritjen e afatit të paralajmërimit duhet të mbahet parasysh afati i mëparshëm. Në mbarim të kontratës së agjencisë, porositësi detyrohet t’i paguajë agjentit një shpërblim në masën dhe nëse: a) agjenti ka siguruar klientë të rinj për palën porositëse ose i ka zhvilluar dukshëm kontratat me klientët ekzistues dhe pala porositëse ka ende përfitime të konsiderueshme që rrjedhin nga kontratat me këta klientë; b) pagesa e këtij shpërb limi është e drejtë, duke marrë parasysh të gjitha rrethanat, sidomos shpërblimin që agjenti tregtar humbet dhe që rezultojnë nga veprimet me këta klientë, si dhe nga kufizimi i aktiviteteve të tij profesionale që i detyrohen ekzistencës së një klauzole të moskonkurrencës. Shuma e shpërblimit nuk mund të tejkalojë një vlerë të barabartë me shpërblimin vjetor të llogaritur nga mesatarja vjetore e shpërblimeve të marra nga agjenti tregtar gjatë pesë viteve të fundit. Nëse kontrata përfshin një afat më të shkurtër se pesë vjet, shpërblimi llogaritet mbi mesataren e periudhës së kontratës. Përfitimi i shpërblimit nuk e përjashton agjentin nga e drejta për shpërblimin e mundshëm të dëmeve. Agjenti tregtar ka të drejtë për shpërblimin e dëmit që ka pësuar si rezultat i përfundimit të marrëdhënieve me palën porositëse. Ky dëm rezulton veçanërisht kur mbarimi i kontratës ka ndodhur në kushte: a) të cilat shmangin agjentin tregtar nga shpërblimi që mund të kishte fituar me përmbushjen në mënyrën e duhur të kontratës, duke i siguruar në të njëjtën kohë porositësit përfitime të konsiderueshme të lidhura me veprimtarinë e agjentit tregtar; dhe/ ose b) të cilat nuk i kanë mundësuar agjentit që të ri mbursojë kostot dhe shpenzimet që ka bërë për përmbushjen e kontratës, sipas udhëzimeve të porositësit. E drejta për shpërblim lind, gjithashtu, edhe kur kontrata e agjencisë përfundon si rezultat i vdekjes së agjentit tregtar dhe mund të kërkohet nga trashëgimtarët e tij. Agjenti tregtar humbet të drejtën për shpërblim nëse, brenda një viti nga mbarimi i kontratës, nuk i komunikon porositësit qëllimin për të mbrojtur të drejtat e tij.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "960",
+      "pika": null,
+      "kreu": "KREU XIII",
+      "temat": [
+        "forma_e_kontrates",
+        "konkurrenca"
+      ],
+      "vlera": [
+        "2 vjet"
+      ],
+      "sinjale": {
+        "kufi_maksimal": true,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Marrëveshja që parashikon një kufizim të aktiviteteve profesionale të agjentit tregtar pas përfundimit të kontratës quhet klauzolë e moskonkurrencës. Marrëveshja e moskonkurrencës është e vlefshme kur bëhet me shkrim. Ajo duhet t’i përkasë një zone gjeografike ose grupi të klientëve, të besuar agjentit tregtar, si dhe llojin e kontratave, për të cilat agjenti tregtar kishte përfaqësimin, sipas kontratës së agjencisë. Klauzola e moskonkurrencës është e vlefshme për një periudhë jo më shumë se 2 vjet nga dita e përfundimit të kontratës.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "961",
+      "pika": null,
+      "kreu": "KREU XIII",
+      "temat": [
+        "paga",
+        "forma_e_kontrates"
+      ],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": true,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "Marrëveshja e garancisë së nënshkruar nga agjenti Një marrëveshje, me anë të së cilës agjenti garanton që një klient do të paguajë çmimin e mallrave që përbëjnë objektin e kontratës, të cilën e ka negociuar apo përfunduar ai, është e vlefshme vetëm nëse dhe për aq sa ajo është bërë me shkrim, mbulon vetëm kontratat e specifikuara shprehimisht në marrëveshje dhe është e arsyeshme për sa i përket interesave të palëve, sidomos për sa i përket shumës së shpërblimit q ë përfiton agjenti. Në çdo rast shuma e vendosur si garanci nuk mund të jetë më e madhe se shpërblimi që agjenti do të përfitonte prej kësaj kontrate.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "968",
+      "pika": null,
+      "kreu": "KREU XIV",
+      "temat": [],
+      "vlera": [
+        "një vit"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Debitori ka të drejtë të kontrollojë administrimin dhe të marrë një raportim mbi gjendjen financiare në fund të likuidimit, ose në fund të çdo viti po qe se administrimi zgjat më shumë se një vit. Po qe se është emëruar një likuidues, ai duhet t’ia japë raportimin edhe debitorit.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "975",
+      "pika": null,
+      "kreu": "KREU XV",
+      "temat": [
+        "paga"
+      ],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "E drejta e ndërmjetësit për shpërblim lind kur kontrata e ndërmjetësimit i sjell efektet e veta dhe pavarësisht nga ndodhitë e mëvonshme të saj. Paragrafi i mësipërm nuk zbatohet kur kontrata e ndërmjetësimit mund të shpallet e pavlefshme, ngaqë ndërmjetësi kishte dijeni për arsyen e pavlefshmërisë.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "1022",
+      "pika": null,
+      "kreu": "KREU XVII",
+      "temat": [
+        "forma_e_kontrates"
+      ],
+      "vlera": [
+        "6 muaj"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": true
+      },
+      "teksti": "Kalimi i veprimeve në llogari nga një klient në një tjetër nënkuptohet i pranuar në qoftë se nuk është kundërshtuar në afatin e caktuar prej palëve ose në afatin që mund të konsiderohet i përshtatshëm sipas rrethanave. Pranimi i veprimit nuk përfshin të drejtën për ta kundërshtuar për gabime shkrimi ose llogaritjeje, për mosveprim ose dublime. Kundërshtimi duhet të bëhet brenda 6 muajve nga data e kalimit të llogarisë, lidhur me likuidimin e mbylljen, e c ila duhet të dërgohet rekomande, përveç rastit kur parashikohet ndryshe me ligj.Rivendosje në afat nuk lejohet.",
+      "ndryshuar_me": [
+        {
+          "ligji": "82/2026",
+          "data": "23.7.2026",
+          "veprimi": "Shtuar"
+        }
+      ]
+    },
+    {
+      "neni": "1023",
+      "pika": null,
+      "kreu": "KREU XVII",
+      "temat": [
+        "afati_i_njoftimit"
+      ],
+      "vlera": [
+        "10 ditë"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": true,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "Kur kontrata është lidhur për një kohë të pacaktuar, secila prej palëve mund të tërhiqet nga kontrata në çdo mbyllje të llogarisë, duke njoftuar të paktën 10 ditë përpara. Në rastin e një ndalimi të ushtrimit të këtij aktiviteti, të paaftësisë për të vepruar, të paaftësisë paguese ose vdekjes së njërës prej palëve, secila prej tyre, ose trashëgimtarët e tyre, kanë të drejtën të tërhiqen nga kontrata. Zgjidhja e kontratës ndalon përfshirjen në llogari të shumave të reja, por pagimi i mbetjes nuk mund të kërkohet vetëm pas skadimit të periudhës së përcaktuar në nenin 1021. A. Depozitat bankare",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "1025",
+      "pika": null,
+      "kreu": "KREU XVIII",
+      "temat": [
+        "periudha_e_proves"
+      ],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": true
+      },
+      "teksti": "Në rast se banka lëshon një librezë depozite kursimi, derdhjet dhe tërheqjet duhet të shënohen në librezë. Shënimet mbi librezë të firmosura nga nëpunësi i bankës, që është i caktuar për këtë shërbim, përbëjnë provë të plotë midis bankës dhe depozituesit. Është e pavlefshme çdo marrëveshje e kundërt.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "1027",
+      "pika": null,
+      "kreu": "KREU XVIII",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": true
+      },
+      "teksti": "Banka që m err dhe pranon depozitat e titujve në administrim duhet t’i ruajë titujt duke marrë interesat ose dividentët, të verifikojë tregtimin për çmimin ose për ripagimin e kapitalit, duke treguar kujdes për grumbullimin e të ardhurave për llogarinë e depozituesit, dhe në përgjithësi të kujdeset për mbrojtjen e të drejtave që kanë të bëjnë me titullin. Shumat e grumbulluara duhet të jenë të kredituara në llogarinë e depozituesit. Në qoftë se për titujt e depozituar duhet të ushtrohet një e drejtë zgjedhjeje, banka duhet të kërkojë në kohë udhëzimet e nevojshme nga depozituesit dhe t’i realizojë ato, në qoftë se në rast nevoje ka marrë fonde të nevojshme. Në mungesë të këtyre udhëzimeve, të drejtat e zgjedhjeve duhet të shiten për llogari të depozituesit nëpërmjet agjentëve të këmbimit. Bankës i takon një kompensim në masën e përcaktuar nga marrëveshja e palëve ose ajo që përdoret zakonisht, përveç pagimit të shpenzimeve të bëra prej saj. Është e pavlefshme çdo marrëveshje me të cilën përjashtohet banka nga ruajtja dhe administrimi i titujve me një kujdesje të zakonshme. B. Shërbimi bankar dhe kasetat e sigurimit",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "1058",
+      "pika": null,
+      "kreu": "KREU XX",
+      "temat": [
+        "pushimet"
+      ],
+      "vlera": [
+        "tre vjet"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Në bisedimet për përfundimin e kontratës palët duhet t’i tregojnë njëra -tjetrës gjendjen e punëve tregtare që kanë të bëjnë me kontratën franshize dhe veçanërisht programin e detyrimeve franshize, si dhe të informojnë njëri-tjetrin sipas parimeve të mirëbesimit. Ata janë të detyruar të ruajnë sekretin e informatave konfidenciale, edhe po të mos përfundohet kontrata. Kush shkel këtë detyrim, detyrohet të shpërblejë dëmin. Kjo e drejtë parashkruhet me kalimin e tre vjetëve nga dita e pushimit të bisedimeve. Pala që ka marrë pjesë në bisedime mund të kërkojë pagimin e shpenzimeve të bëra me besim të ligjshëm në përfundimin e kontratës, e cila nuk u përfundua për shkak të një sjelljeje të qëllimshme të palës tjetër. Forma e kontratës",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "1061",
+      "pika": null,
+      "kreu": "KREU XX",
+      "temat": [
+        "pushimet",
+        "konkurrenca"
+      ],
+      "vlera": [
+        "një vit"
+      ],
+      "sinjale": {
+        "kufi_maksimal": true,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "Edhe pas pushimit të marrëdhënieve kontraktore palët kanë reciprokisht detyrimin për një konkurrencë të ndershme. Mbi këtë bazë, franshizmarrësit mund t’i imponohet një ndalim i konkurrencës lokale për një kohë deri në një vit. Në qoftë se nga ndalimi i konkurrencës rezulton një pakësim i veprimtarisë së tij profesionale, franshizmarrësit i jepet një kompensim financiar i barasvlershëm, pa marrë parasysh pushimin e kontratës. Përgjegjësia e franchizmarrësit",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "1068",
+      "pika": null,
+      "kreu": "KREU XXI",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Kontrata e rentës jetore e krijuar në favorin e një personi, i cili në kohën e kontratës kishte vdekur, është e pavlefshme.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "1087",
+      "pika": null,
+      "kreu": "KREU XXII",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Çdo marrëveshje që përjashton një ose më shumë anëtarë nga pjesëmarrja në fitimet ose humbjet, është e pavlefshme. Marrëdhënie me të tretët",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "1092",
+      "pika": null,
+      "kreu": "KREU XXII",
+      "temat": [],
+      "vlera": [
+        "tre muaj"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Kreditori i veçantë i anëtarit, deri sa zgjat shoqëria, mund të kërkojë të drejtat e tij mbi fitimet që i takojnë debitorit, si dhe marrjen e masave ruajtëse (konservative) mbi kuotën që i takon këtij të fundit në likuidim. Në qoftë se sende të tjera të debitorit janë të pamjaftueshme për të shpërblyer kreditë e tij, kreditori i veçantë i anëtarit mund të kërkojë, veç kësaj, në çdo kohë likuidimin e kuotës së debitorit të tij. Kuota duhet të likuidohet brenda tre muajve nga paraqitja e kërkesës, përveç kur është vendosur shpërndarja e shoqërisë.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "1106",
+      "pika": null,
+      "kreu": "KREU XXII",
+      "temat": [],
+      "vlera": [
+        "tre muaj"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": true,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Çdo anëtar mund të tërhiqet nga shoqëria kur ajo është formuar për një kohë të pacaktuar ose për gjithë jetën e njërit prej anëtarëve. Veç kësaj mund të tërhiqet në rastet e parashikuara në kontratën e shoqërisë ose kur ekziston një shkak i drejtë. Në rastet e parashikuara në paragrafin e parë, tërheqja duhet t’u komunikohet anëtarëve të tjerë të paktën tre muaj përpara.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "1111",
+      "pika": null,
+      "kreu": "KREU XXII",
+      "temat": [],
+      "vlera": [
+        "6 muaj"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Në rastin kur nga shoqëria largohet vetëm një anëtar, ky dhe trashëgimtarët e tij kanë të drejtë vetëm për një shumë të hollash që përfaqësojnë vlerën e kuotës. Likuidimi i kuotës bëhet në bazë të gjendjes pasurore të shoqërisë ditën kur ndodh largimi i anëtarit. Në qoftë se ka aktivitete në vazhdim, anëtari dhe trashëgimtarët e tij kanë pjesë në fitimet dhe humbjet që kanë të bëjnë me këto aktivitete. Përveç sa parashikohet në nenin 1092, pagimi kuotës që i takon ortakut duhet bërë brenda 6 muajve nga dita e largimit të tij.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "1114",
+      "pika": null,
+      "kreu": "KREU XXIII",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": true
+      },
+      "teksti": "Kontrata e sigurimit duhet të bëhet me shkresë, me anë të dëshmisë të sigurimit (policës së sigurimit) që siguruesi i lëshon të siguruarit, përndryshe është e pavlefshme.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "1117",
+      "pika": null,
+      "kreu": "KREU XXIII",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": true,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": true
+      },
+      "teksti": "I siguruari duhet t’i njoftojë siguruesit, me rastin e lidhjes së kontratës, të gjitha rrethanat për të cilat ka dijeni dhe që kanë rëndësi thelbësore për përcaktimin e natyrës dhe të masës së rrezikut. Quhet se kanë rëndësi thelbësore të gjitha rrethanat pë r të cilat siguruesi ka pyetur me shkresë të siguruarin. Kontrata e sigurimit e lidhur pa u marrë përgjigja në ndonjë nga këto pyetje, nuk mund të jetë, për këtë shkak, e pavlefshme.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "1118",
+      "pika": null,
+      "kreu": "KREU XXIII",
+      "temat": [],
+      "vlera": [
+        "tre muaj"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Kur pas lidhjes së kontratës së sigurimit del se i siguruari duke ditur ka dhënë informata jo të sakta në kërkesën ose në dokumentet e paraqitura prej tij dhe në bazë të të cilave është lidhur kontrata e sigurimit, siguruesi brenda tre muajve nga marrja dijeni ka të drejtë: a) të ndryshojë masën e primit të sigurimit, të shumës së sigurimit ose afatin e sigurimit; b) të zgjidhë kontratën e sigurimit në rast se ka rrethana të tilla, që po t’i dinte siguruesi nuk do të kishte lidhur kontratën. Në këtë rast, primet e sigurimit deri në kohën që kërkohet prishja e kontratës, e në çdo rast primi i sigurimit për t’u paguar në vitin e parë të kontratës, nuk i kthehen të siguruarit. Në qoftë se vërtetohet ngjarja e sigurimit përpara se të fillojë afati i treguar në paragrafin e mësipërm, siguruesi nuk është i detyruar të paguajë shumën e sigurimit. Kur kontrata e sigurimit është lidhur për më shumë se një person ose sende, ajo mbetet e vlefshme për ata persona ose sende, të cilëve nuk u referohen deklarimet e pasakta apo heshtja.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "1121",
+      "pika": null,
+      "kreu": "KREU XXIII",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": true
+      },
+      "teksti": "Kontrata e sigurimit është e pavlefshme, në qoftë se vërtetohet se rreziku i sigurimit nuk ka ekzistuar asnjëherë ose ka pushuar së qeni para përfundimit të kontratës.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "1124",
+      "pika": null,
+      "kreu": "KREU XXIII",
+      "temat": [
+        "koha_e_punes"
+      ],
+      "vlera": [
+        "10 vjet",
+        "6 muaj",
+        "dy vjet"
+      ],
+      "sinjale": {
+        "kufi_maksimal": true,
+        "kufi_minimal": false,
+        "detyrim": false,
+        "ndalim": false
+      },
+      "teksti": "Kontrata e sigurimit hyn në fuqi në orën 24.00 të ditës së përfundimit të kontratës dhe mbaron në orën 24.00 të ditës së fundit të kohëzgjatjes së kontratës. Kur afati i kontratës është mbi 10 vjet, palët me kalimin e këtij afati dhe në rast se nuk kanë ndonjë marrëveshje të kundërt, kanë të drejtë të heqin dorë nga kontrata, duke bërë një paralajmërim 6 muaj më parë. Kontrata mund të zgjatet heshtazi një ose disa herë, por në çdo rast jo më shumë se për dy vjet. Kjo dispozitë nuk zbatohet për kontratën e sigurimit të jetës.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "1134",
+      "pika": null,
+      "kreu": "KREU XXIII",
+      "temat": [],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": true
+      },
+      "teksti": "Personi që lidh kontratën e sigurimit të pasurisë ose personi i tretë, në dobi të të cilit lidhet kontrata, duhet të ketë interes pasuror në objektin e siguruar përndryshe kontrata e sigurimit është e pavlefshme.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "1141",
+      "pika": null,
+      "kreu": "KREU XXIII",
+      "temat": [
+        "paga"
+      ],
+      "vlera": [],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": true
+      },
+      "teksti": "Kur vërtetohet ngjarja e sigurimit, i siguruari detyrohet të marrë të gjitha masat që varen nga ai për të shpëtuar dhe ruajtur pasurinë e siguruar me qëllim që të ndalohet ose pakësohet dëmi. Siguruesi nuk detyrohet të paguajë shpërblim për atë pjesë të dëmit që u shkaktua nga mosmarrja prej të siguruarit të masave që mund të merreshin prej tij për të shpëtuar dhe ruajtur pasurinë e siguruar. Siguruesi detyrohet të paguajë shpenzimet për masat e nevojshme që janë marrë për të shpëtuar dhe ruajtur pasurinë e siguruar, pavarësisht nëse ësh të arritur ose jo qëllimi, përveç kur siguruesi provon se mjetet e përdorura dhe shpenzimet e bëra, janë përdorur ose janë bërë pa kujdes. Siguruesi përgjigjet për dëmet materiale të shkaktuara mbi sendet e siguruara nga mjetet e përdorura nga i siguruari për të shmangur ose zvogëluar dëmet e ndodhura në ngjarjen e sigurimit, përveç kur provon që mjetet e tilla janë përdorur pa kujdes dhe pa qenë të domosdoshme.",
+      "ndryshuar_me": []
+    },
+    {
+      "neni": "1159",
+      "pika": null,
+      "kreu": "KREU XXIII",
+      "temat": [
+        "afati_i_njoftimit",
+        "pushimet"
+      ],
+      "vlera": [
+        "15 ditë",
+        "15 ditë"
+      ],
+      "sinjale": {
+        "kufi_maksimal": false,
+        "kufi_minimal": false,
+        "detyrim": true,
+        "ndalim": false
+      },
+      "teksti": "Ndryshimet e profesionit ose të veprimtarisë së të siguruarit kur sjellin pushimin e efekteve të sigurimit, në rast se ato nuk rritin rrezikun në mënyrë të tillë që, në qoftë se kjo gjendje e re do të kishte ekzistuar në kohën e lidhjes së kontratës, siguruesi nuk do ta kishte lidhur atë. Në rast se ndryshimet janë të një natyre të tillë që, gjendja e re edhe po të kishte ekzistuar në kohën e lidhjes së kontratës, siguruesi do ta kishte lidhur kontratën për një çmim më të lartë, pagimi i shumës së sigurimit pakësohet në përpjesëtim me çmimin më të ulët, të caktuar në raport me atë çmim që ka qenë përcaktuar në fillim. Në qoftë se i siguruari njofton për ndryshimet e mësipërme siguruesin, ky, brenda 15 ditëve, duhet të deklarojë nëse do të zgjidhë kontratën apo të pakësojë shumën e sigurimit ose të ngrejë çmimin. I siguruari, brenda 15 ditëve duhet të deklarojë nëse pranon ndryshimet e sipërme në kontratë. Në qoftë se i siguruari deklaron se nuk i pranon ato, kontrata zgjidhet.",
+      "ndryshuar_me": []
+    }
+  ],
+  "boshllekete_vkm": [
+    {
+      "neni": "214",
+      "pika": 1,
+      "temat": [],
+      "teksti": "Miraton rregulloren për administrimin e banesës, e cila hartohet sipas rregullores tip të miratuar nga Këshilli i Ministrave."
+    }
+  ]
+}

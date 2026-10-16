@@ -1,0 +1,7 @@
+  [FALSE+  ] klauzola 17: flagged with ['143', '146'], clause is CLEAN
+  [FALSE+  ] klauzola 20: flagged with ['197'], clause is CLEAN
+  [HOLLOW  ] klauzola 16: cited ['203'], needed one of ['122']
+  [OK      ] klauzola  7: cited ['29']
+  [OK      ] klauzola 10: cited ['83', '90']
+  [OK      ] klauzola 11: cited ['91', '92']
+  [OK      ] klauzola 13: cited ['130']

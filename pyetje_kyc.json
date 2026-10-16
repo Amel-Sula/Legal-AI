@@ -1,0 +1,57 @@
+{
+  "pershkrimi": "A question key for the chat side, the counterpart of kontrata_*.key.json for the report side.",
+  "si_u_ndertua": "KUJDES: nuk eshte verifikuar nga jurist. Por as nga kujtesa: per cdo pyetje, nenet e pranueshme u gjeten duke KERKUAR tekstin e korpusit me rregulla (per shembull /40\\s*or[ëe]/ brenda Kodit te Punes) dhe duke lexuar pastaj tekstin e nenit qe dha, para se te shkruhej ketu. Kjo rruge u zgjodh sepse heren e kaluar pretendova nga kujtesa se Neni 1023 i Kodit Civil ishte pergjigjja per njoftimin ne kontraten e qirase; Neni 1023 rregullon kontratat BANKARE, dhe ai pretendim dergoi pune ne gabim. Nje qeles i nxjerre nga teksti mund te jete i paplote -- mund te kete nene te tjera te pranueshme qe kerkimi im nuk i nxori -- pra matja e 'sakte' lexohet si dysheme, dhe 'gabim' si i besueshem: nje nen jashte listes mund te jete i pranueshem, por nje nen ne liste e thote vete pergjigjen.",
+  "pyetjet": [
+    {
+      "pyetja": "sa ore mund te punoje punemarresi ne jave",
+      "pranohen": [["Kodi i Punës", "Neni 83"]],
+      "pse": "Neni 83: 'Kohëzgjatja normale e javës së punës është jo më shumë se 40 orë.'"
+    },
+    {
+      "pyetja": "sa dite pushime vjetore ka punemarresi",
+      "pranohen": [["Kodi i Punës", "Neni 92, pika 2"]],
+      "pse": "Neni 92/2: 'Kohëzgjatja e pushimeve vjetore është jo më pak se 22 ditë pune...'"
+    },
+    {
+      "pyetja": "a mund te jete paga me e ulet se paga minimale",
+      "pranohen": [["Kodi i Punës", "Neni 111, pika 1"]],
+      "pse": "Neni 111/1: 'Paga nuk mund të jetë më e ulët se paga minimale...'"
+    },
+    {
+      "pyetja": "kur mund te zgjidhet menjehere kontrata e punes",
+      "pranohen": [["Kodi i Punës", "Neni 153"]],
+      "pse": "Neni 153: 'mund të zgjidhin menjëherë kontratën për shkaqe të justifikuara'"
+    },
+    {
+      "pyetja": "sa kohe me pare duhet njoftuar per zgjidhjen e kontrates se punes",
+      "pranohen": [["Kodi i Punës", "Neni 143, pika 1"],
+                   ["Kodi i Punës", "Neni 143, pika 3"]],
+      "pse": "Neni 143/1 jep afatet e njoftimit: dy javë, një muaj, dy muaj, tre muaj."
+    },
+    {
+      "pyetja": "kur mund te pushohet nga puna punemarresi",
+      "pranohen": [["Kodi i Punës", "Neni 153"],
+                   ["Kodi i Punës", "Neni 143, pika 1"],
+                   ["Kodi i Punës", "Neni 146, pika 1"],
+                   ["Kodi i Punës", "Neni 155, pika 4"],
+                   ["Kodi i Punës", "Neni 148"]],
+      "pse": "Pyetje e gjere; keto nene rregullojne shkaqet, afatet dhe pasojat e zgjidhjes. Kjo pyetje u shtua sepse ne makinen e tij kthehu Nenin 587 te Kodit te Procedures Civile (sekuestro mbi pagen), qe permban fjalet 'pushohet nga puna' dhe asgje tjeter me temen."
+    },
+    {
+      "pyetja": "sa vjet mund te lidhet kontrata e qirase",
+      "pranohen": [["Kodi Civil", "Neni 803"]],
+      "pse": "Neni 803: 'Qiraja nuk mund të lidhet për një kohë më të gjatë se tridhjetë vjet'"
+    },
+    {
+      "pyetja": "a mund te jape qiramarresi sendin me nenqira",
+      "pranohen": [["Kodi Civil", "Neni 818"], ["Kodi Civil", "Neni 819"]],
+      "pse": "Neni 818 rregullon nenqirane dhe kalimin e kontrates."
+    },
+    {
+      "pyetja": "cfare detyrohet te dorezoje qiradhenesi",
+      "pranohen": [["Kodi Civil", "Neni 843"], ["Kodi Civil", "Neni 802"],
+                   ["Kodi Civil", "Neni 805"]],
+      "pse": "Neni 843: 'Qiradhënësi duhet: 1. të dorëzojë sendin me aksesorët...'"
+    }
+  ]
+}

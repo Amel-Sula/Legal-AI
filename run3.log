@@ -1,0 +1,100 @@
+MODE: real
+[inject] klauzola 1: [('12', None)]
+[inject] klauzola 2: [('175', 2)]
+[inject] klauzola 3: [('18/4', 2)]
+[inject] klauzola 4: [('40', 2)]
+[inject] klauzola 5: [('142', 1)]
+[inject] klauzola 5: [('21', 3)]
+[inject] klauzola 6: [('24', 2)]
+[inject] klauzola 6: [('22', 1)]
+[inject] klauzola 7: [('26', 3)]
+[inject] klauzola 7: [('26', 3)]
+[inject] klauzola 7: [('26', 3)]
+[inject] klauzola 7: [('26', 3)]
+[inject] klauzola 7: [('33', None)]
+[inject] klauzola 7: [('26', 3)]
+[inject] klauzola 7: [('26', 3)]
+[inject] klauzola 8: [('35', 3)]
+[inject] klauzola 8: [('33', None)]
+[inject] klauzola 8: [('33', None)]
+[inject] klauzola 8: [('33', None)]
+[inject] klauzola 8: [('33', None)]
+[inject] klauzola 8: [('35', 3)]
+[inject] klauzola 9: [('124', 2)]
+[inject] klauzola 9: [('12', None)]
+[inject] klauzola 10: [('18/5', 2)]
+[inject] klauzola 10: [('18/5', 2)]
+[inject] klauzola 10: [('18/5', 2)]
+[inject] klauzola 11: [('18/5', 2)]
+[inject] klauzola 11: [('18/5', 2)]
+[inject] klauzola 11: [('18/5', 2)]
+[inject] klauzola 11: [('18/5', 2)]
+[inject] klauzola 11: [('18/5', 2)]
+[inject] klauzola 11: [('18/5', 2)]
+[inject] klauzola 12: [('3/1', None)]
+[inject] klauzola 12: [('3/1', None)]
+[inject] klauzola 13: [('90', 3)]
+[inject] klauzola 13: [('90', 3)]
+[inject] klauzola 13: [('90', 3)]
+[inject] klauzola 13: [('90', 3)]
+[inject] klauzola 14: [('95', None)]
+[inject] klauzola 14: [('95', None)]
+[inject] klauzola 14: [('31', 2)]
+[inject] klauzola 15: [('32', 1)]
+[inject] klauzola 16: [('122', 3)]
+[inject] klauzola 16: [('122', 3)]
+[inject] klauzola 16: [('122', 3)]
+[inject] klauzola 16: [('122', 3)]
+[inject] klauzola 16: [('122', 3)]
+[inject] klauzola 17: [('142', 1)]
+[inject] klauzola 17: [('142', 1)]
+[inject] klauzola 17: [('142', 1)]
+[inject] klauzola 17: [('142', 1)]
+[inject] klauzola 17: [('142', 1)]
+[inject] klauzola 17: [('142', 1)]
+[inject] klauzola 18: [('151', 1)]
+[inject] klauzola 18: [('163', 6)]
+[inject] klauzola 19: [('21', 1)]
+[inject] klauzola 20: [('196', None)]
+[inject] klauzola 20: [('196', None)]
+[inject] klauzola 20: [('192', None)]
+[inject] klauzola 20: [('192', None)]
+[inject] klauzola 21: [('21', 3)]
+  61 pyetje, 4 paralel...
+
+======================================================================
+PER KLAUZOLE
+======================================================================
+  [FALSE+  ] klauzola  5: flagged with ['142'], clause is CLEAN
+  [OK      ] klauzola  7: cited ['29']
+  [MISSED  ] klauzola 10: needed one of ['90']
+  [OK      ] klauzola 11: cited ['91', '92']
+  [OK      ] klauzola 13: cited ['130']
+  [HOLLOW  ] klauzola 16: cited ['203'], needed one of ['122']
+  [FALSE+  ] klauzola 17: flagged with ['143', '146'], clause is CLEAN
+
+======================================================================
+REZULTATI
+======================================================================
+  solid catches (right clause AND right law) : 3/5
+  hollow catches (right clause, wrong law)   : 1
+  false alarms on clean clauses              : 2
+  missed entirely                            : 1
+
+  STRICT RECALL    3/5 = 60%
+  STRICT PRECISION 3/6 = 50%
+  CITATION ACCURACY 3/8 = 38%
+
+  HOLLOW detail (a lawyer would check these and find nothing):
+    klauzola 16: cited ['203'], but the rule lives in ['122']
+
+  bllokuar nga verifikuesi:
+    klauzola 5 Neni 150/1: ARITMETIKA_NUK_QENDRON
+    klauzola 10 Neni 83: ARITMETIKA_NUK_QENDRON
+    klauzola 10 Neni 78/3: ARITMETIKA_NUK_QENDRON
+    klauzola 10 Neni 90/2: ARITMETIKA_NUK_QENDRON
+    klauzola 11 Neni 87/1: ARITMETIKA_NUK_QENDRON
+    klauzola 13 Neni 132/1: NOT_FOUND
+    klauzola 17 Neni 150/1: ARITMETIKA_NUK_QENDRON
+
+  (asnje deshtim teknik - rezultati eshte i krahasueshem)

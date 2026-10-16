@@ -1,0 +1,67 @@
+MODE: real
+    [rerank deshtoi, klauzola 5] ValueError: no json in response
+    [rerank deshtoi, klauzola 7] HTTPError: HTTP Error 400: Bad Request
+    [rerank deshtoi, klauzola 8] HTTPError: HTTP Error 400: Bad Request
+    [rerank deshtoi, klauzola 11] ValueError: no json in response
+    [rerank deshtoi, klauzola 13] HTTPError: HTTP Error 400: Bad Request
+    [rerank deshtoi, klauzola 16] HTTPError: HTTP Error 400: Bad Request
+    [rerank deshtoi, klauzola 17] HTTPError: HTTP Error 400: Bad Request
+  61 pyetje, 4 paralel...
+    [model deshtoi, klauzola 6] HTTP 400: {"error":{"message":"This model's maximum context length is 8192 tokens. However, you requested 1500 output tokens and your prompt contains at least 6693 input tokens, for a total of at least 8193 tok
+    [model deshtoi, klauzola 8] HTTP 400: {"error":{"message":"This model's maximum context length is 8192 tokens. However, you requested 1500 output tokens and your prompt contains at least 6693 input tokens, for a total of at least 8193 tok
+    [model deshtoi, klauzola 8] HTTP 400: {"error":{"message":"This model's maximum context length is 8192 tokens. However, you requested 1500 output tokens and your prompt contains at least 6693 input tokens, for a total of at least 8193 tok
+    [model deshtoi, klauzola 8] HTTP 400: {"error":{"message":"This model's maximum context length is 8192 tokens. However, you requested 1500 output tokens and your prompt contains at least 6693 input tokens, for a total of at least 8193 tok
+    [model deshtoi, klauzola 8] HTTP 400: {"error":{"message":"This model's maximum context length is 8192 tokens. However, you requested 1500 output tokens and your prompt contains at least 6693 input tokens, for a total of at least 8193 tok
+
+======================================================================
+PER KLAUZOLE
+======================================================================
+  [FALSE+  ] klauzola  5: flagged with ['142'], clause is CLEAN
+  [HOLLOW  ] klauzola  7: cited ['26'], needed one of ['28', '29']
+  [MISSED  ] klauzola 10: needed one of ['90']
+  [HOLLOW  ] klauzola 11: cited ['92', '93', '94'], needed one of ['91']
+  [OK      ] klauzola 13: cited ['130', '132']
+  [MISSED  ] klauzola 16: needed one of ['122']
+  [FALSE+  ] klauzola 17: flagged with ['146', '150'], clause is CLEAN
+
+======================================================================
+REZULTATI
+======================================================================
+  solid catches (right clause AND right law) : 1/5
+  hollow catches (right clause, wrong law)   : 2
+  false alarms on clean clauses              : 2
+  missed entirely                            : 2
+
+  STRICT RECALL    1/5 = 20%
+  STRICT PRECISION 1/5 = 20%
+  CITATION ACCURACY 1/9 = 11%
+
+  HOLLOW detail (a lawyer would check these and find nothing):
+    klauzola 7: cited ['26'], but the rule lives in ['28', '29']
+    klauzola 11: cited ['92', '93', '94'], but the rule lives in ['91']
+
+  bllokuar nga verifikuesi:
+    klauzola 5 Neni 150/1: ARITMETIKA_NUK_QENDRON
+    klauzola 5 Neni 142/1: ARITMETIKA_NUK_QENDRON
+    klauzola 5 Neni 142/3: ARITMETIKA_NUK_QENDRON
+    klauzola 10 Neni 83: ARITMETIKA_NUK_QENDRON
+    klauzola 10 Neni 90/2: ARITMETIKA_NUK_QENDRON
+    klauzola 10 Neni 90/2: ARITMETIKA_NUK_QENDRON
+    klauzola 11 Neni 85/1: ARITMETIKA_NUK_QENDRON
+    klauzola 11 Neni 85/1: ARITMETIKA_NUK_QENDRON
+    klauzola 11 Neni 87/1: ARITMETIKA_NUK_QENDRON
+    klauzola 11 Neni 87/2: ARITMETIKA_NUK_QENDRON
+    klauzola 12 Neni 96/2: ARITMETIKA_NUK_QENDRON
+    klauzola 13 Neni 132/1: NOT_FOUND
+    klauzola 17 Neni 143/1: ARITMETIKA_NUK_QENDRON
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  KUJDES: 5 pyetje nuk morren pergjigje (rate limit, JSON i prishur).
+  Keto numerohen si 'pa konflikt', pra REKALLI MESIPER ESHTE ME I ULET SE REALITETI.
+  Nese ky numer eshte > 2, mos e krahaso kete model me te tjeret. Rilesho.
+    klauzola 6.1: HTTP 400: {"error":{"message":"This model's maximum context length is 8192 tokens. However, you requested 1500 output to
+    klauzola 8.1: HTTP 400: {"error":{"message":"This model's maximum context length is 8192 tokens. However, you requested 1500 output to
+    klauzola 8.2: HTTP 400: {"error":{"message":"This model's maximum context length is 8192 tokens. However, you requested 1500 output to
+    klauzola 8.4: HTTP 400: {"error":{"message":"This model's maximum context length is 8192 tokens. However, you requested 1500 output to
+    klauzola 8.6: HTTP 400: {"error":{"message":"This model's maximum context length is 8192 tokens. However, you requested 1500 output to
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

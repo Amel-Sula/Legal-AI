@@ -1,0 +1,49 @@
+MODE: real
+  61 pyetje, 1 paralel...
+Traceback (most recent call last):
+  File "/home/user/pkg/pipeline.py", line 412, in run
+    answers = list(ex.map(lambda j: llm.ask(j[1], j[2]), jobs))
+  File "/usr/lib/python3.14/concurrent/futures/_base.py", line 639, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/lib/python3.14/concurrent/futures/_base.py", line 311, in _result_or_cancel
+    return fut.result(timeout)
+           ~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.14/concurrent/futures/_base.py", line 445, in result
+    self._condition.wait(timeout)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.14/threading.py", line 369, in wait
+    waiter.acquire()
+    ~~~~~~~~~~~~~~^^
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/pkg/score.py", line 23, in <module>
+    clauses, kept, dropped, meta = run(src, mode=mode, corpus=corpus_file)
+                                   ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/pkg/pipeline.py", line 411, in run
+    with ThreadPoolExecutor(max_workers=WORKERS) as ex:
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/concurrent/futures/_base.py", line 667, in __exit__
+    self.shutdown(wait=True)
+    ~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/usr/lib/python3.14/concurrent/futures/thread.py", line 273, in shutdown
+    t.join()
+    ~~~~~~^^
+  File "/usr/lib/python3.14/threading.py", line 1133, in join
+    self._os_thread_handle.join(timeout)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyboardInterrupt
+Exception ignored on threading shutdown:
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/threading.py", line 1577, in _shutdown
+    atexit_call()
+  File "/usr/lib/python3.14/threading.py", line 1548, in <lambda>
+    _threading_atexits.append(lambda: func(*arg, **kwargs))
+  File "/usr/lib/python3.14/concurrent/futures/thread.py", line 31, in _python_exit
+    t.join()
+  File "/usr/lib/python3.14/threading.py", line 1133, in join
+    self._os_thread_handle.join(timeout)
+KeyboardInterrupt: 

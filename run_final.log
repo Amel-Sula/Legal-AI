@@ -1,0 +1,33 @@
+MODE: real
+  61 pyetje, 4 paralel...
+
+======================================================================
+PER KLAUZOLE
+======================================================================
+  [OK      ] klauzola  7: cited ['29']
+  [OK      ] klauzola 10: cited ['83', '90']
+  [OK      ] klauzola 11: cited ['91', '92']
+  [OK      ] klauzola 13: cited ['130']
+  [HOLLOW  ] klauzola 16: cited ['203'], needed one of ['122']
+  [FALSE+  ] klauzola 17: flagged with ['143', '146'], clause is CLEAN
+  [FALSE+  ] klauzola 20: flagged with ['197'], clause is CLEAN
+
+======================================================================
+REZULTATI
+======================================================================
+  solid catches (right clause AND right law) : 4/5
+  hollow catches (right clause, wrong law)   : 1
+  false alarms on clean clauses              : 2
+  missed entirely                            : 0
+
+  STRICT RECALL    4/5 = 80%
+  STRICT PRECISION 4/7 = 57%
+  CITATION ACCURACY 4/10 = 40%
+
+  HOLLOW detail (a lawyer would check these and find nothing):
+    klauzola 16: cited ['203'], but the rule lives in ['122']
+
+  bllokuar nga verifikuesi:
+    klauzola 12 Neni 96/2: ARITMETIKA_NUK_QENDRON
+
+  (asnje deshtim teknik - rezultati eshte i krahasueshem)
