@@ -1,0 +1,96 @@
+fetch:
+  base_url: http://publications.europa.eu/webapi/rdf/sparql
+  cellar_base: http://publications.europa.eu/resource
+  method: sparql_cellar
+  rate_limit_seconds: 1.5
+  timeout_seconds: 120
+filters:
+  directive_references:
+  - 2006/112
+  - 77/388
+  - 2008/118
+  - 92/12
+  - 2011/96
+  - 2003/49
+  - 90/435
+  - 2011/16
+  - 2016/1164
+  - 2009/133
+  - 90/434
+  keywords:
+  - vat
+  - value added tax
+  - taxation
+  - tax
+  - fiscal
+  - excise
+  - customs duty
+  - duty
+  - tariff
+  - income tax
+  - corporate tax
+  - withholding tax
+  - direct taxation
+  - indirect taxation
+  - tax exemption
+  - tax deduction
+  - tax base
+  - taxable person
+  - input tax
+  - output tax
+  - reverse charge
+  - intra-community
+  - state aid
+schema:
+  fields:
+    celex_id:
+      description: CELEX identifier
+      required: true
+      type: string
+    court:
+      description: Court (Court of Justice, General Court)
+      type: string
+    date:
+      description: Date of decision
+      type: date
+    directive_references:
+      description: Tax directives referenced in the judgment
+      type: array
+    document_type:
+      description: Document type (judgment, order, opinion)
+      type: string
+    ecli:
+      description: European Case Law Identifier
+      required: false
+      type: string
+    tax_keywords:
+      description: Tax-related keywords found in the document
+      type: array
+    text:
+      description: Full text of the judgment
+      required: true
+      type: string
+    title:
+      description: Case title
+      type: string
+    url:
+      description: EUR-Lex URL
+      type: string
+  key_fields:
+  - name: celex_id
+    required: false
+    type: string
+  - name: ecli
+    required: false
+    type: string
+source:
+  auth_required: false
+  country: EU
+  data_types:
+  - case_law
+  description: European Court of Justice case law related to taxation, VAT, fiscal matters, and excise duties
+  id: EU/ECJ-Tax
+  language: en
+  name: ECJ Tax Cases
+  update_frequency: weekly
+  url: https://curia.europa.eu

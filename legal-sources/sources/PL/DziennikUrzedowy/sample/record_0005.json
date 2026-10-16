@@ -1,0 +1,45 @@
+{
+  "_id": "DU/2026/1132",
+  "_source": "PL/DziennikUrzedowy",
+  "_type": "legislation",
+  "_fetched_at": "2026-08-29T15:41:06.500076+00:00",
+  "title": "Rozporządzenie Ministra Spraw Wewnętrznych i Administracji z dnia 20 sierpnia 2026 r. zmieniające rozporządzenie w sprawie rodzajów, zakresu i wzorów oraz sposobu przetwarzania dokumentacji medycznej w podmiotach leczniczych utworzonych przez ministra właściwego do spraw wewnętrznych",
+  "text": "DZIENNIK USTAW\nRZECZYPOSPOLITEJ POLSKIEJ\nWarszawa, dnia 26 sierpnia 2026 r.\nPoz. 1132\nROZPORZĄDZENIE\nMINISTRA SPRAW WEWNĘTRZNYCH I ADMINISTRACJI1)\nz dnia 20 sierpnia 2026 r.\nzmieniające rozporządzenie w sprawie rodzajów, zakresu i wzorów oraz sposobu przetwarzania dokumentacji\nmedycznej w podmiotach leczniczych utworzonych przez ministra właściwego do spraw wewnętrznych\nNa podstawie art. 30 ust. 2 ustawy z dnia 6 listopada 2008 r. o prawach pacjenta i Rzeczniku Praw Pacjenta (Dz. U.\nz 2024 r. poz. 581 oraz z 2026 r. poz. 26 i 791) zarządza się, co następuje:\n§ 1. W rozporządzeniu Ministra Spraw Wewnętrznych i Administracji z dnia 29 kwietnia 2020 r. w sprawie rodzajów,\nzakresu i wzorów oraz sposobu przetwarzania dokumentacji medycznej w podmiotach leczniczych utworzonych przez mi-\nnistra właściwego do spraw wewnętrznych (Dz. U. z 2022 r. poz. 1957, z 2023 r. poz. 2359 oraz z 2026 r. poz. 700) w § 53\ndodaje się ust. 4 w brzmieniu:\n„4. W przypadku przysposobienia dziecka dokumentację medyczną udostępnia się na wniosek jego przedstawi-\nciela ustawowego przez sporządzenie wyciągu ze wskazaniem danych identyfikacyjnych noworodka lub dziecka,\no których mowa w § 10 pkt 2, wynikających z dokonania przysposobienia.”.\n§ 2. Rozporządzenie wchodzi w życie z dniem następującym po dniu ogłoszenia.\nMinister Spraw Wewnętrznych i Administracji: wz. W. Szczepański\n1) Minister Spraw Wewnętrznych i Administracji kieruje działem administracji rządowej – sprawy wewnętrzne, na podstawie § 1 ust. 2\npkt 2 rozporządzenia Prezesa Rady Ministrów z dnia 25 lipca 2025 r. w sprawie szczegółowego zakresu działania Ministra Spraw\nWewnętrznych i Administracji (Dz. U. poz. 999).",
+  "date": "2026-08-26",
+  "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20261132",
+  "eli": "DU/2026/1132",
+  "address": "WDU20260001132",
+  "display_address": "Dz.U. 2026 poz. 1132",
+  "year": 2026,
+  "pos": 1132,
+  "doc_type": "Rozporządzenie",
+  "status": "obowiązujący",
+  "in_force": "IN_FORCE",
+  "entry_into_force": "2026-08-27",
+  "keywords": [
+    "dokumentacja medyczna"
+  ],
+  "released_by": [
+    "MIN. SPRAW WEWNĘTRZNYCH I ADMINISTRACJI"
+  ],
+  "references": {
+    "Akty zmienione": [
+      {
+        "id": "DU/2020/788",
+        "date": "2026-08-27"
+      }
+    ],
+    "Podstawa prawna": [
+      {
+        "id": "DU/2009/417"
+      }
+    ],
+    "Podstawa prawna z art.": [
+      {
+        "id": "DU/2009/417",
+        "art": "art. 30 ust. 2"
+      }
+    ]
+  },
+  "language": "pl"
+}

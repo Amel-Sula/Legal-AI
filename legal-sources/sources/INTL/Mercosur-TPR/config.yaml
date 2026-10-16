@@ -1,0 +1,30 @@
+fetch:
+  max_retries: 3
+  rate_limit: 2.0
+  timeout: 60
+schema:
+  key_fields:
+  - name: _id
+    required: true
+    type: string
+  - name: title
+    required: true
+    type: string
+  - name: date
+    required: false
+    type: date
+  - name: document_type
+    required: false
+    type: string
+source:
+  auth: none
+  country: INTL
+  data_types:
+  - case_law
+  description: 'Dispute resolution awards (laudos), advisory opinions (opiniones consultivas), resolutions, and administrative-labor tribunal sentences from the MERCOSUR Permanent Review Tribunal. ~45 documents
+    total, freely available as PDFs.
+
+    '
+  id: INTL/Mercosur-TPR
+  name: MERCOSUR Permanent Review Tribunal
+  url: https://www.tprmercosur.org/

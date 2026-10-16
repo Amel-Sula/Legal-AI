@@ -1,0 +1,95 @@
+# ═══════════════════════════════════════════════════════════════════
+# Legal Data Hunter — Polish Dziennik Ustaw Configuration
+# ═══════════════════════════════════════════════════════════════════
+
+# ── Source Identity ───────────────────────────────────────────────
+source:
+  id: "PL/DziennikUrzedowy"
+  country: "PL"
+  name: "Dziennik Ustaw - Polish Official Journal"
+  url: "https://www.dziennikustaw.gov.pl"
+  description: |
+    Official Journal of the Republic of Poland (Dziennik Ustaw Rzeczypospolitej
+    Polskiej), published by the Polish Parliament (Sejm). Contains all laws,
+    regulations, international agreements, and government decisions.
+
+    Data is accessed via the official Sejm API with ELI (European Legislation
+    Identifier) support. Full text comes from the /text.html endpoint where the
+    act has an HTML rendering (textHTML=true, roughly 2015-2024) and from
+    /text.pdf otherwise — every act since 2025 and most of the pre-2015 archive
+    is PDF-only.
+
+    Coverage: 1918 onwards (~96,000 acts)
+
+# ── Data Types ────────────────────────────────────────────────────
+data_types:
+  - legislation
+
+# ── Authentication ────────────────────────────────────────────────
+auth:
+  type: "none"
+
+# ── Rate Limiting ─────────────────────────────────────────────────
+rate_limit:
+  requests_per_second: 2
+  burst: 5
+
+# ── API Configuration ─────────────────────────────────────────────
+api:
+  type: "rest"
+  base_url: "https://api.sejm.gov.pl/eli"
+  endpoints:
+    acts_by_year: "/acts/{publisher}/{year}"
+    act_details: "/acts/{publisher}/{year}/{position}"
+    act_text_html: "/acts/{publisher}/{year}/{position}/text.html"
+    act_text_pdf: "/acts/{publisher}/{year}/{position}/text.pdf"
+
+# ── Data Model ────────────────────────────────────────────────────
+data_model:
+  type: "legislation"
+  primary_key: "address"
+  update_strategy: "upsert"
+  versioning: "eli"
+  dedup_key:
+    - "address"
+
+# ── Schema ────────────────────────────────────────────────────────
+schema:
+  total_fields: 20
+  key_fields:
+    - name: "address"
+      description: "Unique act identifier (e.g., WDU20240001984)"
+      type: "string"
+      role: "primary_key"
+      required: true
+    - name: "title"
+      description: "Full title of the act"
+      type: "string"
+      role: "content"
+      required: true
+    - name: "text"
+      description: "Full text of the act, from the HTML rendering or the PDF"
+      type: "string"
+      role: "content"
+      required: true
+    - name: "date"
+      description: "Promulgation date in ISO 8601 format"
+      type: "date"
+      role: "temporal_key"
+      required: true
+    - name: "url"
+      description: "Direct URL to view the act"
+      type: "string"
+      role: "reference"
+      required: true
+
+# ── Notes ─────────────────────────────────────────────────────────
+notes: |
+  - Language: Polish (UTF-8)
+  - API: Official Sejm API with ELI support (api.sejm.gov.pl)
+  - Coverage: 1918 onwards (~96,000 acts in Dziennik Ustaw)
+  - Full text via /text.html where textHTML=true, else /text.pdf
+  - 2025 onwards is 100% PDF-only (textHTML=false on every act)
+  - Completed years are checkpointed to data/years_done.json so a re-launch
+    resumes rather than re-crawling
+  - License: Open data, public domain

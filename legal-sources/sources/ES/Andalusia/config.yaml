@@ -1,0 +1,60 @@
+source:
+  id: ES/Andalusia
+  name: Andalusia Regional Legislation (BOJA)
+  url: https://datos.juntadeandalucia.es
+  country: ES
+  region: Andalucía
+  data_types:
+    - legislation
+  auth:
+    type: none
+  license: CC BY 4.0
+
+api:
+  base_url: https://www.juntadeandalucia.es/ssdigitales/datasets/contentapi
+  endpoints:
+    search: "/search/boja.json?q=data.t_year:{year} AND data.t_number:{number}&_source=data.*&size=50&from={offset}"
+
+# Issue-level partitioning means many small requests instead of one 25 MB
+# per-year dump, so the sustained rate is higher than it was for the bulk path.
+rate_limit:
+  requests_per_second: 4.0
+  burst: 8
+  max_workers: 6
+
+schema:
+  key_fields:
+    - name: "_id"
+      type: "string"
+      required: true
+    - name: "title"
+      type: "string"
+      required: true
+    - name: "text"
+      type: "string"
+      required: true
+    - name: "date"
+      type: "string"
+      required: false
+
+coverage:
+  temporal:
+    start: 1980-01-01
+    end: present
+  document_types:
+    - Órdenes
+    - Decretos
+    - Resoluciones
+    - Leyes
+    - Acuerdos
+    - Convenios
+  estimated_count: 250000+
+
+notes: |
+  Boletín Oficial de la Junta de Andalucía (BOJA).
+  Full text (data.t_bodyNoHtml) comes from the official dataset search API.
+  Data available from 1980 onwards; ~2,000-8,000 dispositions per year.
+  Queries are partitioned by gazette issue so no year hits the API's
+  10,000-hit window cap. The per-year bulk dump
+  (api/v0/boja/all?year=YYYY) is NOT used: it 404s for 2017 and earlier
+  and drops connections on the larger years (issue #1482).

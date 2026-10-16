@@ -1,0 +1,37 @@
+auth:
+  type: none
+base_url: https://eproc.trf2.jus.br/eproc/
+country: BR
+data_types:
+- case_law
+description: 'Court decisions (jurisprudência) from the Tribunal Regional Federal da
+  2ª Região (RJ + ES), fetched from the eproc / InfraTela jurisprudence portal. The
+  old Solr portal at juris.trf2.jus.br is gone (NXDOMAIN); the corpus now lives in
+  eproc.trf2.jus.br. A stateful PHP form-search returns paged result lists, and the
+  full inteiro-teor (relatório + voto + dispositivo) of each decision is downloaded
+  from the download_inteiro_teor endpoint. ~1.18M decisions available.
+
+  '
+language: pt
+name: TRF-2 Federal Regional Court (2nd Region - RJ/ES)
+rate_limit:
+  burst: 2
+  requests_per_second: 0.5
+schema:
+  key_fields:
+  - name: _id
+    required: true
+    type: string
+  - name: process_number
+    required: false
+    type: string
+  - name: tipo
+    required: false
+    type: string
+  - name: orgao_julgador
+    required: false
+    type: string
+  - name: relator
+    required: false
+    type: string
+source_id: BR/TRF2

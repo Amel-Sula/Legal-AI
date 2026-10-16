@@ -1,0 +1,45 @@
+fetch:
+  rate_limit_delay: 0
+  sample_size: 15
+# Upstream pacing is enforced inside fetch_all by a bounded thread pool
+# (MAX_WORKERS in bootstrap.py), so the outer per-record limiter only needs to
+# stay out of the way — throttling it here would starve the writer.
+rate_limit:
+  requests_per_second: 25
+  burst: 25
+  max_workers: 8
+schema:
+  key_fields:
+  - name: _id
+    required: true
+    type: string
+  - name: document_type
+    required: false
+    type: string
+  - name: document_number
+    required: false
+    type: string
+  - name: title
+    required: true
+    type: string
+  - name: text
+    required: true
+    type: string
+  - name: date
+    required: false
+    type: date
+  - name: url
+    required: true
+    type: string
+source:
+  auth: none
+  country: UY
+  data_types:
+  - legislation
+  description: 'Uruguayan decrees, resolutions, decree-laws, and constitution from IMPO (Centro de Información Oficial) open data JSON API. Append ?json=true to any document URL. Laws are covered by UY/IMPO
+    via Parlamento; this source covers complementary document types. Open data license.
+
+    '
+  id: UY/IMPODatosAbiertos
+  name: Uruguay IMPO Datos Abiertos - Decrees, Resolutions & Constitution
+  url: https://www.impo.com.uy/datos-abiertos/

@@ -1,0 +1,43 @@
+auth:
+  type: none
+country: US
+data_types:
+- case_law
+fetch:
+  base_url: https://www.courtlistener.com/api/rest/v4
+  courts: cal,calctapp,calsuperct
+  delay: 1.0
+  search_delay: 2.0
+license: Public Domain (government works)
+name: California State Courts
+notes: 'California Supreme Court, Court of Appeal and published Superior Court
+  opinions via the CourtListener search API. 159,496 opinions available (cal
+  44,150 / calctapp 114,861 / calsuperct 485, audited 2026-08-26). Swept per
+  court, per year, newest first, checkpointed to data/checkpoint.json. Full
+  text from the stored PDF for ~2013+; earlier opinions are API-only and need
+  COURTLISTENER_API_TOKEN.'
+schema:
+  key_fields:
+  - name: _id
+    required: true
+    type: string
+  - name: title
+    required: true
+    type: string
+  - name: date
+    required: false
+    type: date
+  - name: text
+    required: true
+    type: string
+  - name: case_number
+    required: false
+    type: string
+  - name: court
+    required: false
+    type: string
+  - name: citation
+    required: false
+    type: string
+source_id: US/CA-Courts
+url: https://www.courts.ca.gov/

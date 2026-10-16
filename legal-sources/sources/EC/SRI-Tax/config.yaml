@@ -1,0 +1,102 @@
+# ===================================================================
+# EC/SRI-Tax -- Ecuador SRI Tax Guidance (Doctrine)
+# ===================================================================
+# Direct PDF downloads from SRI's Alfresco document repository.
+# Covers formal tax consultation extracts (2014-2024) and current
+# institutional tax regulations. Full text extracted via pdf_extract.
+# ===================================================================
+
+source:
+  id: "EC/SRI-Tax"
+  country: "EC"
+  name: "Servicio de Rentas Internas - Tax Guidance"
+  url: "https://www.sri.gob.ec/"
+  description: |
+    Ecuador's Internal Revenue Service (SRI) tax doctrine and guidance.
+    Includes formal tax consultation extracts (Extractos de las Absoluciones
+    de Consultas Tributarias) from 2014 to the present and current
+    institutional regulations. SRI publishes these as yearly PDF compilations
+    on its Alfresco-backed document portal; each compilation is split into one
+    record per individual ruling, keyed on the ruling's own Oficio number.
+
+data_types:
+  - doctrine
+
+auth:
+  type: "none"
+
+rate_limit:
+  requests_per_second: 0.5
+  burst: 1
+
+api:
+  type: "direct_download"
+  base_url: "https://www.sri.gob.ec/o/sri-portlet-biblioteca-alfresco-internet/descargar"
+  sources:
+    - path: "/extractos-de-consultas"
+      description: "Formal tax consultation extracts (2014-2024)"
+    - path: "/normativa-tributaria-legislacion-nacional"
+      description: "Current institutional tax regulations"
+
+data_model:
+  type: "doctrine"
+  primary_key: "doc_id"
+  update_strategy: "upsert"
+  dedup_key:
+    - "doc_id"
+
+schema:
+  total_fields: 11
+  key_fields:
+    - name: "_id"
+      description: "Unique document identifier"
+      type: "string"
+      role: "primary_key"
+      required: true
+    - name: "title"
+      description: "Document title"
+      type: "string"
+      role: "content"
+      required: true
+    - name: "text"
+      description: "Full text extracted from PDF"
+      type: "string"
+      role: "content"
+      required: true
+    - name: "date"
+      description: "Publication year (YYYY-01-01 format)"
+      type: "date"
+      role: "temporal_key"
+      required: true
+    - name: "url"
+      description: "Direct download URL for the PDF"
+      type: "string"
+      role: "reference"
+      required: true
+    - name: "institution"
+      description: "Issuing institution (SRI)"
+      type: "string"
+      role: "classification"
+      required: false
+    - name: "document_type"
+      description: "Type of doctrine document"
+      type: "string"
+      role: "classification"
+      required: false
+    - name: "year"
+      description: "Publication year"
+      type: "integer"
+      role: "temporal_key"
+      required: false
+
+notes: |
+  - 13 compilations discovered live: 11 annual consultation extracts (2014-2024),
+    a 2025 .zip holding two half-year PDFs, and 1 normativa institucional vigente
+  - Each compilation is cut into one record per ruling on its `Oficio:` line
+    (~2,600 rulings total); a compilation whose layout does not split is emitted
+    whole rather than dropped
+  - pdf_extract is called with force=True: its skip-if-already-in-Neon guard is
+    keyed on the compilation, not the ruling, so honouring it emitted nothing (#1577)
+  - Language: Spanish
+  - No authentication required
+  - Alfresco document management backend

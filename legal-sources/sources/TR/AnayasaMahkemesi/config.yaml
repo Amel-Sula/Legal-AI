@@ -1,0 +1,140 @@
+# ═══════════════════════════════════════════════════════════════════
+# Legal Data Hunter — Turkish Constitutional Court Configuration
+# ═══════════════════════════════════════════════════════════════════
+
+# ── Source Identity ───────────────────────────────────────────────
+source:
+  id: "TR/AnayasaMahkemesi"
+  country: "TR"
+  name: "Turkish Constitutional Court (Anayasa Mahkemesi)"
+  url: "https://www.anayasa.gov.tr"
+  description: |
+    Constitutional Court of the Republic of Turkey (Anayasa Mahkemesi).
+    Five decision categories published by the Kararlar Bilgi Bankası (KBB):
+    - NormDenetimi (norm review / constitutionality) - ~5,579 decisions, 1962+
+    - BireyselBasvuru (individual applications) - ~17,426 decisions, 2012+
+    - SiyasiParti (political party cases) - ~1,875 decisions, 1963+
+    - YuceDivan (Supreme Criminal Tribunal) - ~15 decisions
+    - YasamaDokunulmazligi (parliamentary immunity) - ~40 decisions
+
+# ── Data Types ────────────────────────────────────────────────────
+data_types:
+  - caselaw
+
+# ── Authentication ────────────────────────────────────────────────
+auth:
+  type: "none"
+
+# ── Rate Limiting ─────────────────────────────────────────────────
+rate_limit:
+  requests_per_second: 2
+  burst: 5
+  max_workers: 4
+
+# ── API / Scraping Configuration ──────────────────────────────────
+api:
+  type: "json"
+  base_url: "https://kararlarbilgibankasi.anayasa.gov.tr/api"
+  # Both kararlarbilgibankasi and normkararlarbilgibankasi front the same
+  # backend; the SPA lives under the /kbb/ path prefix since the 2026 rebuild.
+  endpoints:
+    search:
+      method: "POST"
+      path: "/core/public/search"
+      body: '{"kararTipi": "<category>", "page": <1-based>, "size": 100,
+              "sort": "kararTarihi", "order": "asc"}'
+      returns: "metadata only (total, page, data[])"
+    full_text:
+      method: "GET"
+      path: "/core/public/download-decision?id={uuid}&type=pdf&decType={int}"
+      headers:
+        X-Captcha-Verified: "{epoch_ms}:{hmac_sha256(epoch_ms, static_key)}"
+      returns: "born-digital application/pdf (extracted with PyMuPDF)"
+  categories:
+    NormDenetimi: 3
+    BireyselBasvuru: 2
+    SiyasiParti: 4
+    YuceDivan: 5
+    YasamaDokunulmazligi: 6
+
+# ── Data Model ────────────────────────────────────────────────────
+data_model:
+  type: "caselaw"
+  primary_key: "decision_id"
+  update_strategy: "append_only"
+  versioning: "none"
+  dedup_key:
+    - "decision_id"
+
+# ── Schema ────────────────────────────────────────────────────────
+schema:
+  total_fields: 14
+  key_fields:
+    - name: "decision_id"
+      description: "Category + backend UUID (e.g., BireyselBasvuru/00b24c30-...)"
+      type: "string"
+      role: "primary_key"
+      required: true
+    - name: "title"
+      description: "Document title or applicant name"
+      type: "string"
+      role: "content"
+      required: true
+    - name: "text"
+      description: "Full text content of the decision"
+      type: "string"
+      role: "content"
+      required: true
+    - name: "date"
+      description: "Date of the decision in ISO 8601 format"
+      type: "date"
+      role: "temporal_key"
+      required: false
+    - name: "url"
+      description: "Direct URL to view the document"
+      type: "string"
+      role: "reference"
+      required: true
+    - name: "database"
+      description: "Decision category (NormDenetimi, BireyselBasvuru, SiyasiParti, YuceDivan, YasamaDokunulmazligi)"
+      type: "string"
+      role: "classification"
+      required: true
+    - name: "case_number"
+      description: "Case reference (Esas Sayısı)"
+      type: "string"
+      role: "identifier"
+      required: false
+    - name: "decision_number"
+      description: "Decision reference (Karar Sayısı)"
+      type: "string"
+      role: "identifier"
+      required: false
+    - name: "decision_type"
+      description: "Type of decision (merits, inadmissibility, etc.)"
+      type: "string"
+      role: "classification"
+      required: false
+  secondary_fields:
+    - name: "official_gazette_date"
+      description: "Official Gazette publication date"
+    - name: "official_gazette_number"
+      description: "Official Gazette issue number"
+    - name: "applicant"
+      description: "Name of applicant (for individual applications)"
+    - name: "pdf_url"
+      description: "URL to PDF version"
+    - name: "_raw"
+      description: "Complete raw data from source"
+
+# ── Notes ─────────────────────────────────────────────────────────
+notes: |
+  - Language: Turkish (UTF-8)
+  - Coverage: 1962+ (norm review), 2012+ (individual applications)
+  - ~24,935 decisions across all five categories
+  - Search results carry metadata only; full text comes from the decision PDF
+  - The court's Word->PDF pipeline substitutes G-cedilla/G-dotaccent glyphs for
+    the Turkish S-cedilla/I-dotaccent ones; bootstrap.py repairs this
+  - Pagination is 1-based; size up to 1000 accepted (100 used)
+  - data/checkpoint.json records completed categories + last finished page so
+    fleet re-runs resume instead of re-walking the corpus

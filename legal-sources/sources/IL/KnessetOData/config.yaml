@@ -1,0 +1,51 @@
+country: IL
+data_types:
+- legislation
+license:
+  name: "Open Government Data (Israel)"
+  url: "https://main.knesset.gov.il/Activity/Info/Pages/Databases.aspx"
+  commercial_use: true
+  attribution_required: true
+  share_alike: false
+  no_derivatives: false
+  notes: "Official Israeli legislation published via Knesset OData API. Government data."
+name: Israel Knesset OData API (Bills & Laws)
+notes: >
+  ~7,200 Israeli legislative documents (primary acts, amendments and secondary
+  legislation) with full Hebrew text, via the Knesset OData API + gazette PDF
+  download from fs.knesset.gov.il.
+  Driven from KNS_DocumentLaw (the only entity carrying FilePath), joined to
+  KNS_Law for act metadata and to KNS_IsraelLaw via KNS_LawBinding for the
+  consolidated parent law. KNS_DocumentLaw.LawID is NOT an IsraelLawID —
+  filtering it by IsraelLawID returns an empty set with HTTP 200 (issue #1438).
+  Text extracted with PyMuPDF, which applies bidi reordering; the pdfminer
+  fallback repairs the visual-order reversal itself.
+schema:
+  key_fields:
+  - name: document_id
+    required: true
+    type: string
+  - name: law_id
+    required: true
+    type: integer
+  - name: israel_law_id
+    required: false
+    type: integer
+  - name: knesset_num
+    required: false
+    type: integer
+  - name: is_basic_law
+    required: false
+    type: boolean
+  required_fields:
+  - _id
+  - _source
+  - _type
+  - _fetched_at
+  - title
+  - text
+  - date
+  - url
+source_id: IL/KnessetOData
+update_frequency: monthly
+url: https://knesset.gov.il/Odata/ParliamentInfo.svc

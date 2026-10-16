@@ -1,0 +1,28 @@
+{
+  "_id": "fr-2026-17157",
+  "_source": "US/FederalRegister",
+  "_type": "legislation",
+  "_fetched_at": "2026-08-21T12:04:43.520077+00:00",
+  "title": "Government Owned Invention Available for License: Matched Patient-Derived 3D Isocitrate Dehydrogenase (IDH)-Mutant Glioma Cell Lines for Modeling Malignant Transformation",
+  "text": "[Federal Register Volume 91, Number 161 (Friday, August 21, 2026)]\n[Notices]\n[Page 54338]\nFrom the Federal Register Online via the Government Publishing Office [www.gpo.gov]\n[FR Doc No: 2026-17157]\n\n-----------------------------------------------------------------------\n\nDEPARTMENT OF HEALTH AND HUMAN SERVICES\n\nNational Institutes of Health\n\nGovernment Owned Invention Available for License: Matched\nPatient-Derived 3D Isocitrate Dehydrogenase (IDH)-Mutant Glioma Cell\nLines for Modeling Malignant Transformation\n\nAGENCY: National Institutes of Health, HHS.\n\nACTION: Notice.\n\n-----------------------------------------------------------------------\n\nSUMMARY: The National Cancer Institute (NCI) seeks licensees for\nmatched patient-derived 3D Isocitrate Dehydrogenase (IDH)-mutant glioma\ncell lines, 403L and 403H, generated from the same patient before and\nafter malignant transformation from WHO grade 2 to WHO grade 4 disease.\nThis research material provides an opportunity to study IDH-mutant\nglioma progression, temozolomide-associated hypermutation, invasion,\nmetabolism, and treatment resistance.\n\nFOR FURTHER INFORMATION CONTACT: Inquiries related to this license\nopportunity should be directed to: Michael Pollack, Unit Supervisor,\nNCI, Technology Transfer Center, Email: [email protected] or\nPhone: 240-276-5519.\n\nSUPPLEMENTARY INFORMATION: IDH-mutant gliomas often begin as lower-\ngrade tumors but remain incurable and frequently progress to higher-\ngrade disease through malignant transformation. This is clinically\nimportant but difficult to study because matched low-grade and high-\ngrade tumor materials from the same patient are rare. Further, fixed\ntumor specimens are limited for repeated mechanistic or drug-response\nexperiments.\nResearchers at the NCI developed a matched pair of patient-derived\ncell models, 403L and 403H, from the same patient before and after\nmalignant transformation. 403L was established from a WHO grade 2 IDH-\nmutant astrocytoma. 403H was derived from the recurrent WHO grade 4\ntumor following radiation and temozolomide treatment. Both cell lines:\n(1) grow as 3D spheroids, (2) retain endogenous IDH1 R132H expression,\nand (3) were authenticated to the patient's germline by short tandem\nrepeat (STR) profiling (100% match for 403L; 93.33% match for 403H).\nThe high-grade 403H line shows increased invasive behavior,\ntemozolomide-associated hypermutation (tumor mutational burden of\n70.07/Mb vs. 3.96/Mb in 403L), upregulated epithelial-mesenchymal\ntransition (EMT) signaling (whereas Notch signaling is enriched in\n403L), and changes in glioma-associated metabolism, including 2-\nhydroxyglutarate (2-HG), glutamine, fatty acid metabolism, and lactate/\npyruvate flux. Furthermore, 403H showed significantly greater 3D\ninvasion than 403L (p Kim O, et al. A patient-derived cell model for malignant\ntransformation in IDH-mutant glioma. (https://pubmed.ncbi.nlm.nih.gov/39256867/)\nPatents: PCT/US2024/054179, filed November 1,2024.\nPotential Commercial Applications:\nMolecular classification and diagnosis of CNS and kidney\ntumors, including difficult-to-classify and low-confidence cases.\nDiagnostic subtyping aligned to WHO-guided entities.\nReference-lab and hospital-lab deployment.\nClinical trial stratification and translational research\ncohort harmonization.\nMulti-classifier diagnostic decision support.\nCancer treatment development.\nCompetitive Advantages:\nDeveloped from a rigorously curated, large reference set\nof methylation profiles.\nClinically relevant CNS diagnostic.\nCNS tumor methylation classes not represented in existing\ntools, expanding diagnostic coverage.\nClinical-impact analysis creating superior diagnostic\nprecision.\nSuperior classifier for kidney cancer.\nSuperior classifiers for multiple solid, difficult-to-\ndiagnose tumors.\nIntegrative into clinical workflows, improving diagnostic\npractices and enhancing patient care.\n\nDated: August 19, 2026.\nRichard U. Rodriguez,\nAssociate Director, Technology Transfer Center, National Cancer\nInstitute.\n[FR Doc. 2026-17157 Filed 8-20-26; 8:45 am]\nBILLING CODE 4167-05-P",
+  "date": "2026-08-21",
+  "url": "https://www.federalregister.gov/documents/2026/08/21/2026-17157/government-owned-invention-available-for-license-matched-patient-derived-3d-isocitrate-dehydrogenase",
+  "document_number": "2026-17157",
+  "type": "Notice",
+  "subtype": null,
+  "abstract": "The National Cancer Institute (NCI) seeks licensees for matched patient-derived 3D Isocitrate Dehydrogenase (IDH)-mutant glioma cell lines, 403L and 403H, generated from the same patient before and after malignant transformation from WHO grade 2 to WHO grade 4 disease. This research material provides an opportunity to study IDH-mutant glioma progression, temozolomide-associated hypermutation, invasion, metabolism, and treatment resistance.",
+  "agencies": [
+    "Health and Human Services Department",
+    "National Institutes of Health"
+  ],
+  "cfr_references": [],
+  "docket_ids": [],
+  "citation": "91 FR 54338",
+  "start_page": 54338,
+  "end_page": 54338,
+  "page_length": 1,
+  "pdf_url": "https://www.govinfo.gov/content/pkg/FR-2026-08-21/pdf/2026-17157.pdf",
+  "publication_date": "2026-08-21",
+  "effective_date": null,
+  "volume": 91
+}

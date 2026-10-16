@@ -1,0 +1,56 @@
+auth:
+  type: none
+notes: 'VORIS (Vorschrifteninformationssystem) is the official legal information system
+
+  of the German state of Niedersachsen (Lower Saxony). Hosted by Wolters Kluwer.
+
+
+  Content types:
+
+  - Gesetze (Laws)
+
+  - Verordnungen (Regulations)
+
+  - Verwaltungsvorschriften (Administrative regulations)
+
+
+  Access method:
+
+  - Browser-based scraping (Drupal 11 CMS with JS navigation)
+
+  - Search API for document discovery
+
+  - Individual section pages for full text
+
+  - Combine sections via TOC for complete documents
+
+  '
+schema:
+  key_fields:
+  - name: doc_id
+    required: false
+    type: string
+  required_fields:
+  - _id
+  - _source
+  - _type
+  - _fetched_at
+  - title
+  - text
+  - date
+  - url
+scraper:
+  browser: chromium
+  headless: true
+  rate_limit: 2.0
+  timeout: 60000
+  type: browser
+source:
+  country: DE
+  data_types:
+  - legislation
+  id: DE/Niedersachsen
+  jurisdiction: Niedersachsen
+  language: de
+  name: Niedersachsen State Law (VORIS)
+  url: https://voris.wolterskluwer-online.de

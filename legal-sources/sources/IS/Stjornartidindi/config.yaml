@@ -1,0 +1,70 @@
+source:
+  id: IS/Stjornartidindi
+  name: Iceland Official Gazette (Stjórnartíðindi)
+  country: IS
+  url: https://www.stjornartidindi.is/
+  data_types:
+    - legislation
+  auth: none
+  description: >
+    The official State Gazette of Iceland (Stjórnartíðindi), published under Lög
+    um Stjórnartíðindi og Lögbirtingablað nr. 15/2005. Three series: A-deild
+    (Acts of the Althingi / LÖG), B-deild (regulations and administrative rules /
+    reglugerðir), C-deild (treaties and international agreements). Enumerated via
+    the public JSON API (api.stjornartidindi.is/api/v1/adverts) which embeds the
+    full born-digital text of each document inline as document.html — no per-item
+    fetch or OCR required. ~39,600 documents.
+
+fetch:
+  max_retries: 4
+  rate_limit: 0.5
+  timeout: 60
+
+# The rate limiter gates record processing, not HTTP: one API call returns 100
+# adverts with their full text inline, and page fetches are separately paced by
+# a 0.3s sleep in _iter_department. Throttling normalization at the default
+# 2 rec/s would stretch a ~39,600-doc run to hours for no politeness gain.
+rate_limit:
+  requests_per_second: 50
+  min_rate: 5
+  max_rate: 200
+  burst: 100
+  max_workers: 8
+
+data_model:
+  # Resuming from a checkpoint re-reads the page it stopped on; skip records
+  # already in the index instead of appending a second copy.
+  update_strategy: append_only
+
+schema:
+  key_fields:
+    - name: _id
+      type: string
+      required: true
+    - name: title
+      type: string
+      required: true
+    - name: text
+      type: string
+      required: true
+    - name: date
+      type: date
+      required: false
+    - name: law_number
+      type: string
+      required: false
+
+license:
+  name: "Public domain (official state publication)"
+  url: "https://www.stjornartidindi.is/"
+  commercial_use: true
+  attribution_required: false
+  share_alike: false
+  no_derivatives: false
+  notes: >
+    Stjórnartíðindi is the official State Gazette of Iceland, published by the
+    Ministry of Justice under Lög um Stjórnartíðindi og Lögbirtingablað nr.
+    15/2005. Official legal texts (laws, regulations, treaties) are public
+    government works with no access restriction, authentication or licence fee.
+    Consistent with the pd-gov licensing used for the sibling IS/Lagasafn and
+    IS/Reglugerd sources.

@@ -1,0 +1,153 @@
+# ===================================================================
+# US/NY-WCB -- New York Workers' Compensation Board — Board Decisions
+# ===================================================================
+# Openly-published decisions of the New York State Workers' Compensation
+# Board, the quasi-judicial agency that adjudicates workers'-compensation,
+# disability-benefits and paid-family-leave claims under the New York
+# Workers' Compensation Law. On administrative appeal from a Workers'
+# Compensation Law Judge, a three-member Board Panel (and, on Full Board
+# Review, the entire Board) issues a written Memorandum of Decision
+# resolving the contested case = case_law. These are official New York
+# state-government works in the public domain (government edicts).
+#
+# BUILD RECIPE (no auth, no CAPTCHA): four openly-browsable decision
+# indexes on wcb.ny.gov, plus an Internet Archive sweep for the series the
+# Board rotates off its indexes each month:
+#   * "Select Board Panel Decisions" — /content/main/Decisions/
+#     board-panel-decisions.jsp links one server-rendered HTML page per
+#     decision under .../board-panel-decisions/{Matter...}.jsp ; the full
+#     decision body is inside <div id="mainContent">.
+#   * "Significant Full Board Decisions" — /content/main/Decisions/
+#     board-decisions.jsp links born-digital decision PDFs under
+#     /content/main/Decisions/{YYYYMon}/*.pdf . This index shows only the
+#     few most recent months.
+#   * "COVID-19 Decisions" — /content/main/Decisions/covid-19-decisions.jsp
+#     links Board Panel decisions on COVID-19 claims (.jsp pages).
+#   * "Appellate Court Decisions" — /content/main/Decisions/
+#     appellate-court-decisions.jsp links the Appellate Division, Third
+#     Department memoranda and orders deciding appeals from the Board,
+#     under /content/main/Decisions/court-decisions/*.pdf .
+# HISTORICAL ENUMERATION (issue #1393): each month the Board publishes a
+# new set of Significant Full Board decisions and DELETES the previous
+# ones — the month directories 404 live — so the pre-current series is
+# reachable only through the Internet Archive. A Wayback CDX sweep of
+# wcb.ny.gov/content/main/Decisions* recovers every archived decision
+# document; each is fetched live first and replayed from /web/{ts}id_/
+# only when the live URL is gone.
+# The Board's complete corpus is served only through the case-number-keyed
+# "eCase" system (not openly enumerable); these curated decision sets are
+# the openly-published full-text decisions.
+# ===================================================================
+
+source:
+  id: "US/NY-WCB"
+  country: "US"
+  name: "New York Workers' Compensation Board — Board Decisions"
+  url: "https://www.wcb.ny.gov/content/main/Decisions/board-panel-decisions.jsp"
+  description: |
+    Openly-published decisions of the New York State Workers' Compensation
+    Board (WCB). On administrative appeal from a Workers' Compensation Law
+    Judge, a three-member Board Panel — and, on Mandatory or discretionary
+    Full Board Review, the entire Board — issues a written Memorandum of
+    Decision resolving the contested workers'-compensation, disability-
+    benefits or paid-family-leave case. Each decision resolves a specific
+    contested case = case_law. Captured from the Board's "Select Board
+    Panel Decisions" (per-decision HTML pages), "Significant Full Board
+    Decisions" (born-digital PDFs), "COVID-19 Decisions" and "Appellate
+    Court Decisions" (Appellate Division, Third Department memoranda and
+    orders deciding appeals from the Board) indexes, plus an Internet
+    Archive sweep that recovers the Full Board series the Board deletes
+    when it rotates each month off the index. Matter caption, WCB case
+    number, NY Wrk Comp citation, decision date and full decision text are
+    captured. No CAPTCHA, no auth.
+
+data_types:
+  - case_law
+
+auth:
+  type: "none"
+
+rate_limit:
+  requests_per_second: 1
+  burst: 2
+
+api:
+  type: "html_scrape"
+  base_url: "https://www.wcb.ny.gov"
+  endpoints:
+    panel_index: "/content/main/Decisions/board-panel-decisions.jsp"
+    fullboard_index: "/content/main/Decisions/board-decisions.jsp"
+    covid_index: "/content/main/Decisions/covid-19-decisions.jsp"
+    appellate_index: "/content/main/Decisions/appellate-court-decisions.jsp"
+    archive_cdx: "https://web.archive.org/cdx/search/cdx?url=wcb.ny.gov/content/main/Decisions*"
+
+data_model:
+  type: "case_law"
+  primary_key: "record_id"
+
+schema:
+  total_fields: 13
+  key_fields:
+    - name: "_id"
+      description: >
+        Stable id — US/NY-WCB/{matter-slug} for the curated indexes,
+        US/NY-WCB/{YYYYMon}-{matter-slug} for the archived Full Board
+        series, prefixed covid-/court- for the other two series
+      type: "string"
+      role: "primary_key"
+      required: true
+    - name: "record_id"
+      description: "Matter slug derived from the decision page/PDF name"
+      type: "string"
+      role: "identifier"
+      required: true
+    - name: "title"
+      description: "Matter caption (e.g. 'Matter of Postmates Inc.')"
+      type: "string"
+      role: "content"
+      required: true
+    - name: "text"
+      description: "Full text of the decision (mainContent HTML or PDF extract)"
+      type: "string"
+      role: "content"
+      required: true
+    - name: "decision_type"
+      description: >
+        Which series the decision belongs to: board_panel, full_board,
+        board_panel_covid or appellate_court
+      type: "string"
+      role: "classification"
+      required: true
+    - name: "case_number"
+      description: "WCB case number (e.g. 'G1917469'), parsed from the body"
+      type: "string"
+      role: "identifier"
+      required: false
+    - name: "citation"
+      description: "NY Wrk Comp neutral citation (e.g. '2019 NY Wrk Comp G1917469')"
+      type: "string"
+      role: "identifier"
+      required: false
+    - name: "date"
+      description: "Decision date (ISO 8601), parsed from the decision body"
+      type: "date"
+      role: "temporal_key"
+      required: false
+    - name: "url"
+      description: "Link to the decision page or PDF on wcb.ny.gov"
+      type: "string"
+      role: "reference"
+      required: true
+
+license:
+  name: "Public Domain (U.S. state government edict)"
+  url: "https://www.law.cornell.edu/uscode/text/17/105"
+  commercial_use: true
+  attribution_required: false
+  share_alike: false
+  no_derivatives: false
+  notes: >
+    Decisions of the New York State Workers' Compensation Board are
+    official works of New York state government (edicts of a quasi-judicial
+    government body) and are not subject to copyright under the government-
+    edicts doctrine. Free to use, including commercially.

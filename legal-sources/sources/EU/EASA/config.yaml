@@ -1,0 +1,66 @@
+fetcher:
+  endpoints:
+  - https://ad.easa.europa.eu/ad-list/page-{page}
+  - https://ad.easa.europa.eu/sib-docs/page-{page}
+  - https://ad.easa.europa.eu/sd-docs/page-{page}
+  pagination: path-based
+  pdf_extraction: pdfplumber
+  type: scrape_with_pdf
+schema:
+  fields:
+    aircraft_type:
+      description: Aircraft type affected
+      type: string
+    approval_holder:
+      description: Aircraft manufacturer/TC holder
+      type: string
+    document_number:
+      description: Official publication number (e.g., "CASA-2026-02", "2024-0182")
+      type: string
+    document_type:
+      description: Type of publication (AD, SIB, EAD, PAD, SD)
+      type: string
+    easa_approval_number:
+      description: EASA approval number if applicable
+      type: string
+    effective_date:
+      description: Date the directive becomes effective
+      type: date
+    issue_date:
+      description: Date the directive was issued
+      type: date
+    issuing_authority:
+      description: Country or authority that issued the directive
+      type: string
+    revision:
+      description: Revision number if applicable
+      type: string
+    supersedes:
+      description: Previous directive this supersedes
+      type: string
+    text:
+      description: Full text content extracted from PDF
+      type: text
+    title:
+      description: Document title/subject
+      type: string
+  key_fields:
+  - name: document_number
+    required: false
+    type: string
+  - name: document_type
+    required: false
+    type: string
+source:
+  auth: none
+  country: EU
+  data_types:
+  - doctrine
+  description: 'EASA Safety Publications including Airworthiness Directives (ADs), Safety Information Bulletins (SIBs), Emergency Airworthiness Directives (EADs), Proposed Airworthiness Directives (PADs),
+    and Safety Directives (SDs).
+
+    '
+  id: EU/EASA
+  name: European Union Aviation Safety Agency
+  rate_limit: 2 requests per second
+  url: https://ad.easa.europa.eu

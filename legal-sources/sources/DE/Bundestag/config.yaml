@@ -1,0 +1,62 @@
+auth:
+  demo_key: R2BZaee.DjdCyihKZMf8AOjtScubP2EVydegzjmBIQ
+  header: Authorization
+  header_prefix: 'ApiKey '
+  type: api_key
+country: DE
+data_types:
+- legislation
+endpoints:
+  api_base: https://search.dip.bundestag.de/api/v1
+  dip_portal: https://dip.bundestag.de
+  drucksache_list: https://search.dip.bundestag.de/api/v1/drucksache
+  drucksache_text: https://search.dip.bundestag.de/api/v1/drucksache-text
+  portal: https://www.bundestag.de
+fetcher:
+  default_params:
+    f.zuordnung: BT
+  max_retries: 3
+  rate_limit_ms: 500
+  ssl_verify: true
+  timeout_s: 60
+language: de
+license:
+  name: Open Data
+  notes: 'Parliamentary documents are available as open data through the DIP API.
+
+    The API provides machine-readable access to Bundestag proceedings.
+
+    '
+  url: https://dip.bundestag.de/impressum
+name: German Federal Parliament (Bundestag)
+notes: 'The Bundestag is the German federal parliament (lower house).
+
+
+  The DIP API provides access to ~184,000 Bundestag documents including:
+
+  - Drucksachen (printed materials: bills, motions, reports)
+
+  - Plenarprotokolle (plenary protocols)
+
+  - Vorgänge (legislative proceedings)
+
+
+  Documents are filtered by zuordnung=BT (Bundestag) to exclude Bundesrat content.
+
+
+  API documentation: https://dip.bundestag.de/über-dip/hilfe/api
+
+  Public API key valid until end of May 2027; override with DIP_API_KEY.
+
+  '
+schema:
+  date_format: ISO8601
+  key_fields:
+  - name: id
+    required: false
+    type: string
+  - name: dokumentnummer
+    required: false
+    type: string
+  text_field: text
+source_id: DE/Bundestag

@@ -1,0 +1,60 @@
+{
+  "signedContributors": [
+    {
+      "name": "Magnussmari",
+      "id": 130930212,
+      "comment_id": 4229474573,
+      "created_at": "2026-04-11T13:08:09Z",
+      "repoId": 1178356315,
+      "pullRequestNo": 42
+    },
+    {
+      "name": "Magnussmari",
+      "id": 130930212,
+      "comment_id": 4256011466,
+      "created_at": "2026-04-15T22:21:32Z",
+      "repoId": 1178356315,
+      "pullRequestNo": 42
+    },
+    {
+      "name": "jrklaus8",
+      "id": 63156449,
+      "comment_id": 4364063839,
+      "created_at": "2026-05-02T14:48:41Z",
+      "repoId": 1178356315,
+      "pullRequestNo": 79
+    },
+    {
+      "name": "BarryRodick",
+      "id": 123958824,
+      "comment_id": 4459500675,
+      "created_at": "2026-05-15T11:51:22Z",
+      "repoId": 1178356315,
+      "pullRequestNo": 115
+    },
+    {
+      "name": "BarryRodick",
+      "id": 123958824,
+      "comment_id": 4460943954,
+      "created_at": "2026-05-15T15:08:55Z",
+      "repoId": 1178356315,
+      "pullRequestNo": 115
+    },
+    {
+      "name": "edvandroadolfopereira-bot",
+      "id": 239202475,
+      "comment_id": 5112955098,
+      "created_at": "2026-07-29T04:16:17Z",
+      "repoId": 1178356315,
+      "pullRequestNo": 234
+    },
+    {
+      "name": "ZachLaik",
+      "id": 151473506,
+      "comment_id": 5582505233,
+      "created_at": "2026-09-08T09:17:58Z",
+      "repoId": 1178356315,
+      "pullRequestNo": 259
+    }
+  ]
+}

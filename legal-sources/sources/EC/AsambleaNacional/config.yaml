@@ -1,0 +1,56 @@
+source:
+  id: EC/AsambleaNacional
+  name: Ecuador Legislation (oficial.ec)
+  country: EC
+  url: https://www.oficial.ec/
+  data_types:
+    - legislation
+  description: |
+    Ecuadorian legislation from oficial.ec including laws, decrees, agreements,
+    resolutions, and ordinances. ~6,900 documents from 2014 to present. Full HTML
+    text. Spanish language. Free access.
+
+auth:
+  type: none
+
+# NOTE (issue #1316): BaseScraper.bootstrap() calls rate_limiter.wait() once per
+# record received from fetch_all, so this gates the post-fetch normalize loop,
+# NOT the network. It was 0.1 (10 s) on top of the scraper's own 10 s sleep,
+# i.e. ~20 s per document => ~34 h for the corpus and a stalled fleet slot.
+# Network politeness now lives in bootstrap.py (see fetch.workers below).
+rate_limit:
+  requests_per_second: 25
+  burst: 25
+
+api:
+  type: html_scraping
+  base_url: https://www.oficial.ec
+  format: html
+  endpoints:
+    sitemap_page1: /sitemap.xml?page=1
+    sitemap_page2: /sitemap.xml?page=2
+    document: /{slug}
+
+schema:
+  key_fields:
+    - name: "_id"
+      type: string
+      required: true
+    - name: title
+      type: string
+      required: true
+    - name: text
+      type: string
+      required: true
+    - name: date
+      type: string
+      required: false
+
+fetch:
+  strategy: sitemap_scrape
+  # Aggregate network pace shared by all worker threads (env overrides:
+  # EC_OFICIAL_WORKERS / EC_OFICIAL_RPS). ~6,200 pages at 4 req/s ≈ 26 min.
+  workers: 6
+  requests_per_second: 4
+  request_timeout: [15, 45]
+  checkpoint: data/checkpoint.json

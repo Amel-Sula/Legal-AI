@@ -1,0 +1,28 @@
+source_id: TZ/TCRA
+name: Tanzania Communications Regulatory Authority — Regulations & Guidelines
+country: TZ
+url: https://www.tcra.go.tz/documents
+data_types:
+  - legislation
+  - doctrine
+auth:
+  type: none
+schedule: monthly
+
+schema:
+  key_fields:
+    - _id
+    - title
+    - date
+    - text
+    - document_type
+    - category
+
+license:
+  name: "Custom Terms (Government)"
+  url: "https://www.tcra.go.tz/terms-of-use"
+  commercial_use: true
+  attribution_required: false
+  share_alike: false
+  no_derivatives: false
+  notes: "Official regulatory documents published by TCRA for public compliance. Telecom laws, regulations, guidelines, rules, codes, and sector plans."

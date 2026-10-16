@@ -1,0 +1,65 @@
+# ═══════════════════════════════════════════════════════════════
+# Legal Data Hunter — .gitignore
+# ═══════════════════════════════════════════════════════════════
+
+# ── Secrets (NEVER commit these) ──────────────────────────────
+.env
+*.env
+.env.*
+!.env.template
+!.env.example
+secrets/
+*.key
+*.pem
+# Exception: the CA intermediates ssl_aia ships so a worker with no plain-HTTP
+# egress can still repair a misconfigured TLS chain (#1514). These are PUBLIC
+# CA certificates — never private keys, which stay covered by the rules above.
+!common/ca_intermediates/*.pem
+.auth-token
+.github-token
+.session.lock
+
+# ── Data files (too large for git) ────────────────────────────
+# Sample data IS tracked (small, for validation)
+# Full data dumps are NOT tracked
+sources/*/data/
+sources/*/*/data/
+*.jsonl
+!sources/*/sample/
+!sources/*/*/sample/
+
+# ── Python ────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+
+# ── IDE ───────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ── Cache ─────────────────────────────────────────────────────
+.cache/
+*.cache
+common/__pycache__/
+
+# ── Logs ──────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Checkpoints (VPS-only, restart state) ────────────────────
+.checkpoint.json
+checkpoint.json
+sources/**/checkpoint.json
+sources/**/*checkpoint*.json

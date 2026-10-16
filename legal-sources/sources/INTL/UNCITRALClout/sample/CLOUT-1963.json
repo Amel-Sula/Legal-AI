@@ -1,0 +1,25 @@
+{
+  "_id": "CLOUT-1963",
+  "_source": "INTL/UNCITRALClout",
+  "_type": "case_law",
+  "_fetched_at": "2026-07-19T23:44:47.809067+00:00",
+  "title": "CLOUT case  1963",
+  "text": "Case 1963: [MAL 7 (1)]\nAustralia: Supreme Court of Queensland\nCheshire Contractors Pty Ltd. v. Civil Mining & Construction Pty Ltd.\n1 October 2021\nOriginal in English\nPublished: [2021] QCA 212\n[keywords: arbitration agreement; arbitration clause]\nThe case concerns the interpretation of the phrase “in respect of a defined legal\nrelationship” in a national provision which was modelled after article 7(1) MAL.\nThe respondent had entered into a subcontract with the appellant to carry out the\nroadworks of a construction project. A dispute arose between the parties in relation to\na claim for payment made by the appellant in connection with the subcontracted works.\nThe appellant filed a claim against the respondent seeking to recover the money said\nto be owed. The respondent contended that the matter was the subject of an arbitration\nagreement in the subcontract and applied for an order referring the parties to\narbitration in accordance with section 8(1) of the Commercial Arbitration Act 2013\n(modelled after article 8(1) MAL). The lower Court allowed the respondent’s\napplication, stayed the proceedings, and referred the parties to arbitration pursuant to\nsection 8(1).\nUpon appeal, the appellant contended that the conclusion reached by the lower Court\nwas based on an erroneous interpretation of the phrase “in respect of a defined legal\nrelationship” in section 7(1) of the Commercial Arbitration Act 2013 (modelled after\narticle 7(1) MAL). The appellant submitted that the proper construction of section 7(1)\nrequired that, to be an “arbitration agreement” within the meaning and for the purposes\nof section 8(1), a clause in a contract which otherwise satisfies section 7(1) must itself\ndefine the legal relationship to which the clause is intended to apply. As the purported\narbitration agreement did not itself define the legal relationship to which the clause\nwas intended to apply, the appellant submitted that there was no “arbitration\nagreement” within the meaning of section 7(1).\nThe respondent submitted that the appellant’s construction was too narrow and\nartificial. It was submitted that the appellant’s reading changed the word “defined” in\nsection 7(1) from an adjective, a word used to describe the type of legal relationship\nrequired, into a verb, requiring a definition of the relevant legal relationship to be\nincluded in the arbitration agreement. The respondent contended that all section 7(1)\nrequired is a defined legal relationship between the parties in respect of which certain\ndisputes are to be referred to arbitration.\nThe Court dismissed the appeal. In its view, the construction of section 7(1) contended\nby the appellant was not supported on a textual analysis nor by reference to the context\nand purpose of the provision. It was found that it was not a requirement of section 7(1)\nthat an arbitration agreement must “define” the legal relationship with respect to which\nit is intended to operate. The Court referred to authoritative case law from Australia\nand from New Zealand given the international context of the MAL and considered that\nit supported a broad interpretation of the phrase “defined legal relationship”. The\nCourt found that the reference in the relevant clause to “the disputes or differences”\nwas, on orthodox contractual construction principles, a reference to the disputes or\ndifferences arising between the parties that was to be construed as a “defined legal\nrelationship”.\nV.22-01086 3/14\n\nA/CN.9/SER.C/ABSTRACTS/214",
+  "date": "2021-03-11",
+  "url": "https://www.uncitral.org/clout/clout/data/rus/clout_case_1963_110321.html",
+  "case_number": "1963",
+  "country": "Russian Federation",
+  "country_code": "rus",
+  "court": "Judicial Chamber on Economic Disputes of the Supreme Court of the Russian Federation",
+  "court_reference": "308-ЭС20-18927",
+  "parties": null,
+  "legislative_text": "CISG (1980)\n        \n\n           Convention on the Limitation Period in the International Sale of Goods (New York, 1974)",
+  "clout_issue": "213",
+  "articles": [
+    "3",
+    "7(2)"
+  ],
+  "keywords": [],
+  "comments": "Original in Russian \n\nAvailable on the Supreme Court’s judgments online database: https://legalacts.ru/sud/opredelenie-sudebnoi-kollegii-po-ekonomicheskim-sporam-verkhovnogo-suda-rossiiskoi-federatsii-ot-11032021-n-308-es20-18927-po-delu-n-a25-7552019/",
+  "document_type": "case_abstract"
+}

@@ -1,0 +1,45 @@
+auth:
+  type: none
+country: US
+data_types:
+- case_law
+fetch:
+  base_url: https://www.courtlistener.com/api/rest/v4
+  courts: haw,hawapp
+  delay: 0.5
+# CourtListener throttles authenticated clients at 5,000 requests/hour (~1.39/s)
+# and each opinion costs roughly one request, so the ceiling is deliberate.
+rate_limit:
+  requests_per_second: 1.2
+  min_rate: 0.4
+  max_rate: 1.35
+  burst: 5
+  max_workers: 8
+license: Public Domain (government works)
+name: Hawaii State Courts
+notes: 'Hawaii appellate opinions via CourtListener. ~33K opinions. Full text from CourtListener''s stored opinion text (COURTLISTENER_API_TOKEN) with PDF extraction as fallback. Search cursor checkpointed to data/checkpoint.json so runs resume.'
+schema:
+  key_fields:
+  - name: _id
+    required: true
+    type: string
+  - name: title
+    required: true
+    type: string
+  - name: date
+    required: false
+    type: date
+  - name: text
+    required: true
+    type: string
+  - name: case_number
+    required: false
+    type: string
+  - name: court
+    required: false
+    type: string
+  - name: citation
+    required: false
+    type: string
+source_id: US/HI-Courts
+url: https://www.courts.state.hi.us/

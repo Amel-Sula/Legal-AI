@@ -1,0 +1,519 @@
+#!/usr/bin/env python3
+"""
+RO/ICCJ -- Înalta Curte de Casație și Justiție Data Fetcher
+
+Fetches Romanian supreme court decisions from scj.ro.
+Full text is embedded in HTML detail pages, accessed by sequential ID.
+
+Strategy:
+  - Bootstrap: Iterate through all decision IDs (1 to ~235,000).
+  - Update: Fetch recent IDs beyond last known max.
+  - Sample: Fetch 15 recent decisions for validation.
+
+Detail page: https://www.scj.ro/1093/Detalii-jurisprudenta?customQuery[0].Key=id&customQuery[0].Value={id}
+
+Usage:
+  python bootstrap.py bootstrap          # Full initial pull (~235K decisions)
+  python bootstrap.py bootstrap --sample  # Fetch sample records for validation
+  python bootstrap.py update             # Incremental update (new IDs)
+"""
+
+import sys
+import json
+import logging
+import re
+import html as html_mod
+import time
+from pathlib import Path
+from datetime import datetime, timezone
+from typing import Generator, Optional
+
+# Add project root to path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(PROJECT_ROOT))
+
+import requests
+
+from common.base_scraper import BaseScraper
+from common.http_client import HttpClient
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+)
+logger = logging.getLogger("legal-data-hunter.RO.ICCJ")
+
+BASE_URL = "https://www.scj.ro"
+DETAIL_PATH = "/1093/Detalii-jurisprudenta"
+
+# Approximate max ID as of April 2026
+APPROX_MAX_ID = 235000
+
+# scj.ro is periodically unreachable at the TCP layer (see #1475: DNS resolves,
+# but ICMP, :80 and :443 all time out from datacenter *and* residential
+# vantages). Every request then fails identically, which used to look exactly
+# like a run of missing IDs. Stop and say so instead of walking the ID space.
+MAX_CONSECUTIVE_TRANSPORT_FAILURES = 20
+
+
+class SourceBlockedError(RuntimeError):
+    """Raised when scj.ro is unreachable, so the run fails loud rather than
+    reporting an empty corpus as a successful crawl."""
+
+
+class RoICCJScraper(BaseScraper):
+    """
+    Scraper for RO/ICCJ -- Romanian High Court of Cassation and Justice.
+    Country: RO
+    URL: https://www.scj.ro
+
+    Data types: case_law
+    Auth: none
+    """
+
+    def __init__(self):
+        source_dir = Path(__file__).parent
+        super().__init__(source_dir)
+
+        # Sequential-ID walks over ~250K IDs cannot finish in one fleet slot
+        # (exit 124 / 100h). Persist progress so reruns resume instead of
+        # restarting at ID 1 (see #1100, mirrors the #961 PK/IHC checkpoint fix).
+        self._sample_mode = False
+        self._ckpt_path = source_dir / "data" / "iccj_checkpoint.json"
+        self._ckpt_last = 0
+
+        # Reachability tracking, so a dead host is never mistaken for a gap in
+        # the ID space (#1475).
+        self._any_success = False
+        self._consecutive_transport_failures = 0
+        self._last_fetch_reachable = True
+
+        self.client = HttpClient(
+            base_url=BASE_URL,
+            headers={
+                "User-Agent": "LegalDataHunter/1.0 (Open Data Research)",
+                "Accept": "text/html,application/xhtml+xml",
+                "Accept-Language": "ro,en;q=0.5",
+            },
+            timeout=30,
+        )
+
+    def _fetch_detail(self, decision_id: int) -> Optional[str]:
+        """Fetch the HTML detail page for a given decision ID."""
+        url = f"{DETAIL_PATH}?customQuery%5B0%5D.Key=id&customQuery%5B0%5D.Value={decision_id}"
+        self.rate_limiter.wait()
+        try:
+            resp = self.client.get(url)
+            resp.raise_for_status()
+        except (requests.exceptions.ConnectionError,
+                requests.exceptions.Timeout,
+                requests.exceptions.RetryError,
+                requests.exceptions.SSLError) as e:
+            # The host did not answer at all. This says nothing about whether
+            # decision_id exists, so it must not count as a miss.
+            self._last_fetch_reachable = False
+            self._consecutive_transport_failures += 1
+            logger.warning(
+                f"scj.ro unreachable fetching ID {decision_id} "
+                f"({self._consecutive_transport_failures} in a row): {e}"
+            )
+            if self._consecutive_transport_failures >= MAX_CONSECUTIVE_TRANSPORT_FAILURES:
+                raise SourceBlockedError(
+                    f"www.scj.ro unreachable: {self._consecutive_transport_failures} "
+                    f"consecutive connection failures (last ID {decision_id}). "
+                    "DNS resolves but the host answers on neither :80 nor :443 — "
+                    "see issue #1475. Aborting instead of reporting an empty crawl."
+                ) from e
+            return None
+        except Exception as e:
+            # A real HTTP answer (404 and friends) — the host is alive, this ID
+            # simply has no decision behind it.
+            self._last_fetch_reachable = True
+            self._consecutive_transport_failures = 0
+            logger.warning(f"Failed to fetch ID {decision_id}: {e}")
+            return None
+
+        self._last_fetch_reachable = True
+        self._any_success = True
+        self._consecutive_transport_failures = 0
+        return resp.text
+
+    # -- Checkpoint / resume --------------------------------------------------
+
+    def _load_checkpoint(self) -> int:
+        """Return the last fully-processed decision ID (0 if none)."""
+        try:
+            data = json.loads(self._ckpt_path.read_text())
+            self._ckpt_last = int(data.get("last_id", 0))
+        except Exception:
+            self._ckpt_last = 0
+        return self._ckpt_last
+
+    def _flush_checkpoint(self):
+        """Persist the current checkpoint position to disk."""
+        try:
+            self._ckpt_path.parent.mkdir(parents=True, exist_ok=True)
+            self._ckpt_path.write_text(json.dumps({"last_id": self._ckpt_last}))
+        except Exception as e:
+            logger.warning(f"Could not write checkpoint: {e}")
+
+    def _advance_checkpoint(self, decision_id: int):
+        """Record progress up to decision_id, flushing every 100 IDs."""
+        if self._sample_mode:
+            return
+        self._ckpt_last = decision_id
+        if decision_id % 100 == 0:
+            self._flush_checkpoint()
+
+    # scj.ro publishes only modern (post-1990s digitised) ICCJ decisions. Source
+    # data occasionally carries OCR/typo years (e.g. "2913" for 2013, "1004" for
+    # 2004) that produced an absurd reported date_range of 1004–2913 (issue #1185).
+    # Reject any parsed year outside a plausible window.
+    MIN_VALID_YEAR = 1990
+
+    def _valid_year(self, year) -> bool:
+        try:
+            y = int(year)
+        except (TypeError, ValueError):
+            return False
+        return self.MIN_VALID_YEAR <= y <= datetime.now(timezone.utc).year + 1
+
+    def _parse_detail(self, html_content: str, decision_id: int) -> Optional[dict]:
+        """Parse a detail page HTML into a raw record dict."""
+        if "jurisprudence_details" not in html_content:
+            return None
+
+        # Extract header section
+        header_match = re.search(
+            r'<div class="header">(.*?)</div>\s*<div',
+            html_content,
+            re.DOTALL,
+        )
+        header_text = ""
+        section = ""
+        decision_number = ""
+        decision_date = ""
+
+        if header_match:
+            header_html = header_match.group(1)
+            header_text = self._strip_html(header_html)
+
+            # Extract court section — line after JUSTIȚIE
+            section_match = re.search(
+                r"(?:JUSTIŢIE|JUSTIȚIE)\s+(.+?)(?:\s*Decizia|\s*Decizie|\s*Sentinţ|\s*Sentința|\s*Hotărâre|\s*Încheiere|\s*$)",
+                header_text,
+                re.DOTALL | re.IGNORECASE,
+            )
+            if section_match:
+                section = section_match.group(1).strip().strip("-–—\n").strip()
+                # Clean up multiline section names
+                section = re.sub(r"\s+", " ", section).strip()
+
+            # Extract decision number
+            dec_match = re.search(
+                r"(?:Decizia|Decizie|Hotărârea|Sentinţa|Sentința|Încheierea)\s+nr\.\s*(\d+(?:/\d+)?)",
+                header_text,
+                re.IGNORECASE,
+            )
+            if dec_match:
+                decision_number = dec_match.group(1)
+
+            # Extract date from header
+            date_match = re.search(
+                r"din\s+(\d{1,2})\s+(ianuarie|februarie|martie|aprilie|mai|iunie|iulie|august|septembrie|octombrie|noiembrie|decembrie)\s+(\d{4})",
+                header_text,
+                re.IGNORECASE,
+            )
+            if date_match and self._valid_year(date_match.group(3)):
+                day, month_name, year = date_match.groups()
+                month_map = {
+                    "ianuarie": "01", "februarie": "02", "martie": "03",
+                    "aprilie": "04", "mai": "05", "iunie": "06",
+                    "iulie": "07", "august": "08", "septembrie": "09",
+                    "octombrie": "10", "noiembrie": "11", "decembrie": "12",
+                }
+                month = month_map.get(month_name.lower(), "01")
+                decision_date = f"{year}-{month}-{int(day):02d}"
+
+        # Extract content div
+        content_start = html_content.find('<div class="content">')
+        if content_start < 0:
+            return None
+
+        # Find matching closing </div> with depth tracking
+        pos = content_start + 21  # len('<div class="content">')
+        depth = 0
+        content_end = len(html_content)
+        while pos < len(html_content):
+            next_open = html_content.find("<div", pos)
+            next_close = html_content.find("</div>", pos)
+            if next_close < 0:
+                break
+            if next_open >= 0 and next_open < next_close:
+                depth += 1
+                pos = next_open + 4
+            else:
+                if depth == 0:
+                    content_end = next_close
+                    break
+                depth -= 1
+                pos = next_close + 6
+
+        content_html = html_content[content_start + 21:content_end]
+        text = self._strip_html(content_html)
+
+        if not text or len(text) < 50:
+            return None
+
+        # Build title
+        if decision_number:
+            title = f"Decizia nr. {decision_number}"
+            if decision_date:
+                title += f" din {decision_date}"
+        else:
+            # Use first ~100 chars of text as title
+            title = text[:100].strip()
+            if len(text) > 100:
+                title = title.rsplit(" ", 1)[0] + "..."
+
+        # Try to extract date from text if not found in header
+        if not decision_date:
+            date_match = re.search(
+                r"(?:Şedinţa|Ședința|şedinţa|ședința)\s+public[ăa]\s+din\s+(?:data\s+de\s+)?(\d{1,2})\s+(ianuarie|februarie|martie|aprilie|mai|iunie|iulie|august|septembrie|octombrie|noiembrie|decembrie)\s+(\d{4})",
+                text,
+                re.IGNORECASE,
+            )
+            if date_match and self._valid_year(date_match.group(3)):
+                day, month_name, year = date_match.groups()
+                month_map = {
+                    "ianuarie": "01", "februarie": "02", "martie": "03",
+                    "aprilie": "04", "mai": "05", "iunie": "06",
+                    "iulie": "07", "august": "08", "septembrie": "09",
+                    "octombrie": "10", "noiembrie": "11", "decembrie": "12",
+                }
+                month = month_map.get(month_name.lower(), "01")
+                decision_date = f"{year}-{month}-{int(day):02d}"
+
+        # Fallback: derive a year-level date from the decision number (nr. N/YYYY).
+        # ICCJ decision numbers embed the ruling year, so a null date (which drops
+        # the record at ingest as a temporal_key with no value) is always avoidable.
+        if not decision_date:
+            year_match = re.search(r"/(\d{4})", decision_number or "") or re.search(
+                r"/(\d{4})", title or ""
+            )
+            if year_match and self._valid_year(year_match.group(1)):
+                decision_date = f"{year_match.group(1)}-01-01"
+
+        return {
+            "decision_id": decision_id,
+            "title": title,
+            "text": text,
+            "date": decision_date or None,
+            "section": section or None,
+            "decision_number": decision_number or None,
+            "header": header_text.strip() if header_text else None,
+            "url": f"{BASE_URL}{DETAIL_PATH}?customQuery%5B0%5D.Key=id&customQuery%5B0%5D.Value={decision_id}",
+        }
+
+    def _strip_html(self, html_str: str) -> str:
+        """Strip HTML tags and clean up text."""
+        # Remove style and script blocks
+        text = re.sub(r"<style[^>]*>.*?</style>", "", html_str, flags=re.DOTALL | re.IGNORECASE)
+        text = re.sub(r"<script[^>]*>.*?</script>", "", text, flags=re.DOTALL | re.IGNORECASE)
+        # Replace <br> and </p> with newlines
+        text = re.sub(r"<br\s*/?>", "\n", text, flags=re.IGNORECASE)
+        text = re.sub(r"</p>", "\n", text, flags=re.IGNORECASE)
+        text = re.sub(r"</div>", "\n", text, flags=re.IGNORECASE)
+        # Remove all remaining tags
+        text = re.sub(r"<[^>]+>", " ", text)
+        # Decode HTML entities
+        text = html_mod.unescape(text)
+        # Clean up whitespace
+        text = re.sub(r"[ \t]+", " ", text)
+        text = re.sub(r"\n[ \t]+", "\n", text)
+        text = re.sub(r"\n{3,}", "\n\n", text)
+        return text.strip()
+
+    def _find_max_id(self) -> int:
+        """Binary search for the current max decision ID."""
+        lo, hi = APPROX_MAX_ID - 2000, APPROX_MAX_ID + 5000
+        # Verify lo exists
+        html = self._fetch_detail(lo)
+        if not html or "jurisprudence_details" not in html:
+            lo = 1
+
+        # Find upper bound
+        html = self._fetch_detail(hi)
+        if html and "jurisprudence_details" in html:
+            hi += 10000
+
+        while lo < hi - 1:
+            mid = (lo + hi) // 2
+            html = self._fetch_detail(mid)
+            if html and "jurisprudence_details" in html:
+                lo = mid
+            else:
+                hi = mid
+
+        # Every probe failing collapses the search to lo == 1, which fetch_all
+        # would happily read as "the corpus is one decision long" and finish
+        # with zero records and a success exit (#1475).
+        if not self._any_success:
+            raise SourceBlockedError(
+                "Could not reach a single scj.ro detail page while probing for "
+                "the max decision ID — refusing to report an empty corpus. "
+                "See issue #1475."
+            )
+
+        logger.info(f"Current max decision ID: {lo}")
+        return lo
+
+    # -- BaseScraper interface -----------------------------------------------
+
+    def fetch_all(self) -> Generator[dict, None, None]:
+        """Yield all decisions by iterating through IDs.
+
+        Resumes from the last checkpointed ID so a fleet rerun (after the 100h
+        timeout) continues forward instead of re-walking from ID 1. Sample runs
+        never read or write the checkpoint.
+        """
+        max_id = self._find_max_id()
+        consecutive_misses = 0
+        max_misses = 50  # Allow gaps in IDs
+
+        start_id = 1
+        if not self._sample_mode:
+            start_id = self._load_checkpoint() + 1
+            if start_id > 1:
+                logger.info(f"Resuming from checkpoint at ID {start_id}")
+
+        for decision_id in range(start_id, max_id + 1):
+            html = self._fetch_detail(decision_id)
+            if not html:
+                if not self._last_fetch_reachable:
+                    # Host down, not a missing ID. Advancing the checkpoint here
+                    # would mark every unfetched decision as done and make the
+                    # gap permanent across reruns (#1475).
+                    continue
+                consecutive_misses += 1
+                if consecutive_misses > max_misses:
+                    logger.warning(f"Too many consecutive misses at ID {decision_id}, skipping ahead")
+                    consecutive_misses = 0
+                self._advance_checkpoint(decision_id)
+                continue
+
+            record = self._parse_detail(html, decision_id)
+            if record:
+                consecutive_misses = 0
+                yield record
+            else:
+                consecutive_misses += 1
+
+            # Safe to checkpoint here: any record yielded above has already been
+            # persisted by the framework loop before control returns to us.
+            self._advance_checkpoint(decision_id)
+
+            if decision_id % 1000 == 0:
+                logger.info(f"Progress: ID {decision_id}/{max_id}")
+
+        # Reached the end of the corpus — flush final position.
+        if not self._sample_mode:
+            self._flush_checkpoint()
+
+    def fetch_updates(self, since: datetime) -> Generator[dict, None, None]:
+        """Fetch decisions added since the last run by checking new IDs."""
+        last_max = self.status.get("last_max_id", APPROX_MAX_ID - 1000)
+        current_max = self._find_max_id()
+
+        logger.info(f"Fetching updates: IDs {last_max + 1} to {current_max}")
+        consecutive_misses = 0
+
+        for decision_id in range(last_max + 1, current_max + 1):
+            html = self._fetch_detail(decision_id)
+            if not html:
+                if not self._last_fetch_reachable:
+                    continue
+                consecutive_misses += 1
+                if consecutive_misses > 50:
+                    break
+                continue
+
+            record = self._parse_detail(html, decision_id)
+            if record:
+                consecutive_misses = 0
+                yield record
+
+        self.status["last_max_id"] = current_max
+
+    def normalize(self, raw: dict) -> dict:
+        """Transform a raw decision into a standardized record."""
+        return {
+            "_id": f"RO-ICCJ-{raw['decision_id']}",
+            "_source": "RO/ICCJ",
+            "_type": "case_law",
+            "_fetched_at": datetime.now(timezone.utc).isoformat(),
+            "title": raw["title"],
+            "text": raw["text"],
+            "date": raw.get("date"),
+            "url": raw["url"],
+            "decision_id": raw["decision_id"],
+            "decision_number": raw.get("decision_number"),
+            "section": raw.get("section"),
+            "header": raw.get("header"),
+        }
+
+
+# -- CLI entry point ----------------------------------------------------------
+
+if __name__ == "__main__":
+    scraper = RoICCJScraper()
+
+    if len(sys.argv) < 2:
+        print("Usage: python bootstrap.py [bootstrap|bootstrap-fast|update|test-api] [--sample]")
+        sys.exit(1)
+
+    command = sys.argv[1]
+    sample_mode = "--sample" in sys.argv
+
+    # The fleet wrapper invokes `bootstrap-fast`; without the alias it fell
+    # through to "Unknown command" and the wrapper re-ingested sample/ as if
+    # the crawl had succeeded.
+    if command in ("bootstrap", "bootstrap-fast"):
+        scraper._sample_mode = sample_mode
+        try:
+            result = scraper.bootstrap(sample_mode=sample_mode, sample_size=15)
+        except SourceBlockedError as e:
+            print(f"ERROR: {e}", file=sys.stderr)
+            sys.exit(2)
+        print(json.dumps(result, indent=2, default=str))
+
+    elif command == "update":
+        try:
+            result = scraper.update()
+        except SourceBlockedError as e:
+            print(f"ERROR: {e}", file=sys.stderr)
+            sys.exit(2)
+        print(json.dumps(result, indent=2, default=str))
+
+    elif command == "test-api":
+        print("Testing scj.ro detail page access...")
+        html = scraper._fetch_detail(232100)
+        if html and "jurisprudence_details" in html:
+            record = scraper._parse_detail(html, 232100)
+            if record:
+                normalized = scraper.normalize(record)
+                print(f"Success! Decision: {normalized['title']}")
+                print(f"Text length: {len(normalized['text'])} chars")
+                print(f"Date: {normalized['date']}")
+                print(f"Section: {normalized['section']}")
+                print(f"First 200 chars: {normalized['text'][:200]}")
+            else:
+                print("ERROR: Could not parse detail page")
+                sys.exit(1)
+        else:
+            print("ERROR: Could not fetch detail page")
+            sys.exit(1)
+
+    else:
+        print(f"Unknown command: {command}")
+        sys.exit(1)

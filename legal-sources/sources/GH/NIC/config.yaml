@@ -1,0 +1,82 @@
+# ===================================================================
+# GH/NIC -- Ghana National Insurance Commission — Directives
+# ===================================================================
+# Regulatory directives, guidelines, and news from Ghana's National
+# Insurance Commission (NIC).
+# ===================================================================
+
+source:
+  id: "GH/NIC"
+  country: "GH"
+  name: "Ghana National Insurance Commission — Directives"
+  url: "https://nic.gov.gh/"
+  description: |
+    Regulatory directives, guidelines, market reports, public notices and
+    news from Ghana's National Insurance Commission. The Commission retired
+    nicgh.org (now 301s to nic.gov.gh) and rebuilt on a public Strapi v5 API;
+    directives and publications carry a PDF whose full text is extracted with
+    pdfplumber, while notices and news hold full text inline as rich-text
+    blocks.
+
+data_types:
+  - doctrine
+
+auth:
+  type: "none"
+
+rate_limit:
+  requests_per_second: 1
+  burst: 2
+
+api:
+  type: "strapi_rest"
+  base_url: "https://nicwebsitebackend-gcauhtdfeph8d9e4.westeurope-01.azurewebsites.net/api"
+  endpoints:
+    - "/regulatory-docs?populate=*"
+    - "/publications?populate=*"
+    - "/notices?populate=*"
+    - "/news-articles?populate=*"
+  notes: "33 directives/guidelines (PDF text), 22 reports & market research (PDF text), 5 public notices (inline), 8 news articles (inline). PDFs served from nicsws.blob.core.windows.net/strapi-uploads."
+
+data_model:
+  type: "doctrine"
+  primary_key: "_id"
+  update_strategy: "upsert"
+
+schema:
+  total_fields: 15
+  key_fields:
+    - name: "text"
+      description: "Full text from PDF extraction or WordPress content"
+      type: "string"
+      role: "content"
+      required: true
+    - name: "title"
+      description: "Document title"
+      type: "string"
+      role: "content"
+      required: true
+    - name: "date"
+      description: "Publication date"
+      type: "date"
+      role: "temporal_key"
+      required: true
+    - name: "document_type"
+      description: "Type: directive, publication, notice or news"
+      type: "string"
+      role: "status"
+      required: true
+    - name: "pdf_url"
+      description: "URL to source PDF (directives and publications only)"
+      type: "string"
+      role: "reference"
+      required: false
+
+license:
+  name: "Public Government Documents (Ghana)"
+  url: null
+  commercial_use: true
+  attribution_required: true
+  share_alike: false
+  no_derivatives: false
+  notes: "Official regulatory publications from Ghana NIC"

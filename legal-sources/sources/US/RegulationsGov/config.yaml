@@ -1,0 +1,41 @@
+auth: none
+country: US
+data_types:
+- legislation
+- doctrine
+fetch:
+  delay: 0.3
+  page_size: 1000
+  window_days: 5
+  federal_register_api: https://www.federalregister.gov/api/v1
+name: Regulations.gov — Federal Rulemaking Documents
+schema:
+  key_fields:
+  - name: _id
+    required: true
+    type: string
+  - name: title
+    required: true
+    type: string
+  - name: date
+    required: false
+    type: date
+  - name: text
+    required: true
+    type: string
+  - name: document_type
+    required: false
+    type: string
+  - name: agencies
+    required: false
+    type: array
+source_id: US/RegulationsGov
+url: https://www.regulations.gov/
+license:
+  name: US Public Domain
+  url: https://www.law.cornell.edu/uscode/text/17/105
+  commercial_use: true
+  attribution_required: false
+  share_alike: false
+  no_derivatives: false
+  notes: "US federal government works are in the public domain"

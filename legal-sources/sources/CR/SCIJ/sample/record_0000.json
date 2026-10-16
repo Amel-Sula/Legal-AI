@@ -1,0 +1,19 @@
+{
+  "_id": "CR/SCIJ:1000",
+  "_source": "CR/SCIJ",
+  "_type": "legislation",
+  "_fetched_at": "2026-08-23T22:49:28.669668+00:00",
+  "title": "Decreto Ejecutivo 16978 - Declara Emergencia Nacional Actividades Arroz Sorgo y Soya",
+  "text": "(Anulada)\n(Este\nDecreto Ejecutivo se anulo mediante resolución de\nla Sala Constitucional\nN° 3410 de las 14:05 horas del 10 de noviembre de 1992.)",
+  "date": "1986-04-22",
+  "url": "https://sinalevi.go.cr/ResultadosNormativa/Informacion?param1=1000&param2=1075&param3=1",
+  "norm_id": 1000,
+  "version_id": 1075,
+  "norm_type": "Decreto Ejecutivo",
+  "norm_number": "16978",
+  "issuing_body": "Poder Ejecutivo",
+  "date_vigencia": "1986-05-12",
+  "gaceta": "N° 87 del 12/05/1986",
+  "version_label": "2 de 2",
+  "jurisdiction": "CR"
+}

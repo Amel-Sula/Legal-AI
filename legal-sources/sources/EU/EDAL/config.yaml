@@ -1,0 +1,46 @@
+schema:
+  key_fields:
+  - name: title
+    required: true
+    type: string
+  - name: date
+    required: false
+    type: date
+  - name: court
+    required: false
+    type: string
+  - name: country
+    required: false
+    type: string
+  - name: text
+    required: true
+    type: string
+  - name: headnote
+    required: false
+    type: string
+  - name: outcome
+    required: false
+    type: string
+  - name: citation
+    required: false
+    type: string
+  - name: ecli
+    required: false
+    type: string
+  - name: url
+    required: true
+    type: string
+source:
+  api_type: html_scraping
+  auth: none
+  country: EU
+  data_types:
+  - case_law
+  description: 'Asylum case law of the CJEU, the ECtHR, UN treaty bodies and the national courts of 20+ EU member states. Structured English summaries including headnote, facts, decision/reasoning,
+    outcome, subsequent proceedings and observations. ~1,830 cases, updated through 2026. Case URLs come from the site sitemaps (/sitemap.xml/summaries/*); case pages are server-rendered HTML.
+
+    '
+  id: EU/EDAL
+  name: European Database of Asylum Law
+  schedule: monthly
+  url: https://www.asylumlawdatabase.eu/summaries

@@ -1,0 +1,85 @@
+# Legal Data Hunter — Python Dependencies
+#
+# Install: pip install -r requirements.txt
+
+# Core
+requests>=2.31.0
+pyyaml>=6.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+
+# For XML-based sources
+xmltodict>=0.13.0
+
+# For some EU sources that use SPARQL
+sparqlwrapper>=2.0.0
+
+# Optional: for HTML-heavy scraping
+html5lib>=1.1
+
+# PDF text extraction
+# Primary: opendataloader-pdf — structured markdown output (requires Java 11+ on host).
+# Fallbacks: pdfplumber, pypdf (flat text) — used automatically when Java is absent.
+# These are orchestrated by common/pdf_extract.py.
+opendataloader-pdf==2.4.7
+pypdf>=4.0.0
+pdfplumber>=0.10.0
+# PyMuPDF (fitz) — preferred fast/accurate extractor for a few scrapers
+# (BD/SCOB, PK/IHC, KH/HuskyPartners). These fall back to the pdfplumber/pypdf
+# chain above when fitz is absent, so it is not strictly required — but
+# installing it gives better text quality. See issue #816.
+pymupdf>=1.23.0
+# Image-OCR fallback for scanned/image-only PDFs (no text layer). When the
+# text-layer backends above return ~0 chars, common/pdf_extract.py rasterizes
+# pages with PyMuPDF and runs tesseract via pytesseract. Requires the
+# `tesseract` system binary (apt: tesseract-ocr, brew: tesseract) and Pillow.
+# Falls back gracefully (OCR skipped) when any of these are absent. Issue #856.
+pytesseract>=0.3.10
+Pillow>=9.0.0
+
+# Neon Postgres client — used by common/pdf_extract.preload_existing_ids()
+# for idempotent skip-if-already-in-Neon checks.
+psycopg2-binary>=2.9.0
+
+# AES-GCM response decryption. MY/AGCLaws' DataTables endpoints return
+# {"encrypted": true, "data": "<base64>"} where the key is published in the
+# listing page source, exactly as the site's own js/responseCrypto.js reads it
+# (issue #1465). The scraper falls back to pycryptodome when this is absent.
+cryptography>=42.0.0
+
+# RSS/Atom feed parsing
+feedparser>=6.0.0
+
+# HuggingFace datasets (for CH/Kantone and other dataset-based sources)
+datasets>=2.18.0
+# Both ship as datasets dependencies, but CH/OpenCaseLaw imports them directly to
+# read the parquet export shard-by-shard, so pin them in their own right.
+pyarrow>=14.0.0
+fsspec>=2023.9.0
+
+# Browser automation (for JavaScript SPAs and Cloudflare-protected sites)
+# After install, run: playwright install chromium
+playwright>=1.40.0
+
+# RTF text extraction (US/IA-Legislation)
+striprtf>=0.0.26
+
+# Word document text extraction (INTL/CAN-Gacetas Andean gazettes: .docx + legacy
+# .doc). python-docx reads .docx; olefile recovers text from binary .doc. Both
+# scrapers fall back to a pure-stdlib parser when these are absent (issue #880),
+# so they are preferred-but-not-required, but installing them gives cleaner text.
+python-docx>=1.1.0
+olefile>=0.46
+
+# Excel file parsing (LU/Parliament and similar XLSX data sources)
+openpyxl>=3.1.0
+
+# AWS S3 client (used by US/CourtListenerBulk for the public CourtListener
+# bulk-data bucket — anonymous access, no credentials needed)
+boto3>=1.34.0
+
+# Free Law Project's juriscraper (BSD-2) — the scraper library that powers
+# US/JuriscraperUpdater, which runs ~198 state + 22 federal opinion scrapers.
+# Without it the source raises "No module named 'juriscraper'" and yields 0
+# records (samples-only). See issue #1136.
+juriscraper>=3.0.0

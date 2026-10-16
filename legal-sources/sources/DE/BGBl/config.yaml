@@ -1,0 +1,91 @@
+country: DE
+data_types:
+- legislation
+endpoints:
+  bgbl_portal: https://www.recht.bund.de
+  portal: https://www.gesetze-im-internet.de
+  toc: https://www.gesetze-im-internet.de/gii-toc.xml
+fetcher:
+  max_retries: 3
+  rate_limit_ms: 1000
+  ssl_verify: true
+  timeout_s: 60
+language: de
+license:
+  name: Public Domain (Amtliche Werke)
+  notes: 'German federal laws are "amtliche Werke" (official works) which are
+
+    not protected by copyright under German law (§ 5 UrhG).
+
+    '
+  url: https://www.gesetze-im-internet.de/hinweise.html
+name: German Federal Law (Gesetze im Internet)
+notes: 'Gesetze im Internet provides free access to virtually the entire body of
+
+  current German federal law. Over 6,000 laws and regulations are available.
+
+
+  Data is provided by the Federal Ministry of Justice and Consumer Protection
+
+  in cooperation with the Federal Office of Justice.
+
+
+  XML files contain:
+
+  - Metadata (abbreviation, title, publication reference)
+
+  - Full structured text (articles, paragraphs, annexes)
+
+  - Amendment history and notes
+
+
+  The XML schema follows the DTD at:
+
+  http://www.gesetze-im-internet.de/dtd/1.01/gii-norm.dtd
+
+
+  Records are emitted one per SECTION (§ / Artikel) so that a citation such as
+
+  "§ 195 BGB" resolves to a single document (issue #1621); laws with no
+
+  numbered sections are emitted whole.
+
+  '
+schema:
+  date_format: ISO8601
+  key_fields:
+  - name: abbreviation
+    required: false
+    type: string
+  - name: section
+    required: false
+    type: string
+  - name: section_number
+    required: false
+    type: string
+  - name: heading
+    required: false
+    type: string
+  - name: law_title
+    required: false
+    type: string
+  - name: context
+    required: false
+    type: string
+  - name: title
+    required: true
+    type: string
+  - name: date
+    required: false
+    type: string
+  - name: url
+    required: false
+    type: string
+  - name: law_url
+    required: false
+    type: string
+  - name: text
+    required: true
+    type: string
+  text_field: Content
+source_id: DE/BGBl

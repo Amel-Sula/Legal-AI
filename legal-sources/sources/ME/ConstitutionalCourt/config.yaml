@@ -1,0 +1,50 @@
+api:
+  base_url: http://www.ustavnisud.me/ustavnisud
+  files_endpoint: /obrada_fajlovi.php
+  list_endpoint: /upit.php
+  page_size: 100
+  rate_limit_delay: 1.0
+auth: none
+country: ME
+data_types:
+- caselaw
+language: sr
+license: public
+name: Montenegro Constitutional Court (Ustavni sud Crne Gore)
+notes: 'Montenegro Constitutional Court database, 1964 to present (~20,100 indexed
+  decisions).
+
+
+  The index comes from a DataTables server-side API (upit.php, POST, JSON).
+
+
+  FULL TEXT comes from the per-decision attachment endpoint obrada_fajlovi.php?iddok=N,
+  which returns download links for the decision document (.docx, legacy .doc, or
+  born-digital .pdf). Roughly 80% of indexed decisions yield real full text.
+
+
+  DO NOT use the upit.php `sadrzaj_fajlova` column as text (issue #1254): it is the
+  publisher''s search-index copy with every diacritic, every punctuation mark and
+  every newline deleted in their own database, which also corrupts case numbers
+  embedded in the body ("U-I br. 116/26" -> "UI br 11626"). It is not recoverable.
+
+
+  Pre-2005 decisions are attached as scanned image PDFs (0 extractable chars) and are
+  skipped pending OCR.
+
+  '
+schema:
+  date_field: date
+  key_fields:
+  - name: case_number
+    required: false
+    type: string
+  - name: internal_id
+    required: true
+    type: string
+  - name: document_type
+    required: false
+    type: string
+  text_field: text
+source_id: ME/ConstitutionalCourt
+url: http://www.ustavnisud.me

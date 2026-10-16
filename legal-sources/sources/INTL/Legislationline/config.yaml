@@ -1,0 +1,87 @@
+source:
+  id: "INTL/Legislationline"
+  country: "INTL"
+  name: "OSCE/ODIHR Legal Opinions & Comments (formerly Legislationline)"
+  url: "https://odihr.osce.org/odihr/legal-opinions-and-comments"
+  description: |
+    OSCE/ODIHR legal opinions and comments — expert legal reviews of draft and
+    enacted laws across OSCE participating states (elections, political party
+    financing, judiciary, anti-discrimination, assembly, etc.). Each document has
+    an introductory summary plus a full-text PDF opinion. Migrated from the
+    decommissioned legislationline.org Drupal JSON:API (the legacy national-
+    legislation corpus was not carried over). ~220 documents, all with full text.
+
+data_types:
+  - doctrine
+
+auth:
+  type: "none"
+
+rate_limit:
+  requests_per_second: 1
+  burst: 3
+
+api:
+  type: "html"
+  base_url: "https://odihr.osce.org"
+  endpoints:
+    list: "/odihr/legal-opinions-and-comments"
+    document: "/odihr/{node_id}"
+
+data_model:
+  type: "doctrine"
+  source_nature: "consolidated"
+  primary_key: "_id"
+  update_strategy: "upsert"
+  versioning: "none"
+  dedup_key:
+    - "_id"
+
+schema:
+  total_fields: 13
+  key_fields:
+    - name: "_id"
+      description: "Unique identifier (odihr-opinion-{node_id})"
+      type: "string"
+      role: "primary_key"
+      required: true
+    - name: "title"
+      description: "Document title"
+      type: "string"
+      role: "content"
+      required: true
+    - name: "text"
+      description: "Full text of the legal opinion (PDF extracted)"
+      type: "string"
+      role: "content"
+      required: true
+    - name: "date"
+      description: "Publication date (ISO 8601)"
+      type: "date"
+      role: "temporal_key"
+      required: false
+    - name: "country"
+      description: "ISO 3166-1 alpha-2 country code (from title prefix)"
+      type: "string"
+      role: "reference"
+      required: false
+    - name: "summary"
+      description: "Introductory summary from the node page"
+      type: "string"
+      role: "content"
+      required: false
+    - name: "pdf_url"
+      description: "URL of the source PDF opinion"
+      type: "string"
+      role: "reference"
+      required: false
+
+license:
+  id: "custom-terms"
+  name: "OSCE/ODIHR Custom Terms"
+  url: "https://www.osce.org/copyright"
+  commercial_use: true
+  attribution_required: true
+  share_alike: false
+  no_derivatives: false
+  notes: "OSCE/ODIHR content is freely reproducible with attribution; no explicit reuse restriction."

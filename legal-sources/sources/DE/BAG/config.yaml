@@ -1,0 +1,77 @@
+country: DE
+data_types:
+- caselaw
+endpoints:
+  portal: https://www.rechtsprechung-im-internet.de
+  rss_feed: https://www.rechtsprechung-im-internet.de/jportal/docs/feed/bsjrs-bag.xml
+  toc: https://www.rechtsprechung-im-internet.de/rii-toc.xml
+fetcher:
+  max_retries: 3
+  rate_limit_ms: 1500
+  ssl_verify: true
+  timeout_s: 60
+language: de
+license:
+  name: Public Domain (Amtliche Werke)
+  notes: 'German court decisions are "amtliche Werke" (official works) which are
+
+    not protected by copyright under German law (§ 5 UrhG).
+
+    Decisions are offered in all formats for free use and reuse.
+
+    '
+  url: https://www.rechtsprechung-im-internet.de/jportal/portal/page/bsjrsprod.psml?cmsuri=/technik/de/impressum/bsjrsimpressum.jsp
+name: German Federal Labor Court (Bundesarbeitsgericht)
+notes: 'rechtsprechung-im-internet.de provides access to decisions from the
+
+  Federal Labor Court (Bundesarbeitsgericht/BAG) and other supreme federal courts.
+
+
+  Coverage:
+
+  - 12,000+ decisions in the database
+
+  - Full text available via ZIP XML downloads
+
+  - ECLI identifiers included for case law interoperability
+
+
+  The BAG is the supreme court for labor law matters with senates covering:
+
+  - Individual labor law (dismissal protection, wages, working time)
+
+  - Collective labor law (unions, works councils, collective agreements)
+
+  - Social security related to employment
+
+  - Church labor law
+
+
+  Available formats:
+
+  - HTML (web display)
+
+  - PDF (print-ready)
+
+  - XML (structured data via ZIP downloads)
+
+
+  The RSS feed provides the most recent decisions.
+
+  The TOC XML provides complete discovery of all 12,000+ decisions.
+
+  '
+schema:
+  date_format: ISO8601
+  key_fields:
+  - name: doknr
+    required: false
+    type: string
+  - name: ecli
+    required: false
+    type: string
+  - name: aktenzeichen
+    required: false
+    type: string
+  text_field: text
+source_id: DE/BAG

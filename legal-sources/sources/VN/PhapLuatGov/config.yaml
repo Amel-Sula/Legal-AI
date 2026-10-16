@@ -1,0 +1,55 @@
+fetcher:
+  base_url: https://vanban.chinhphu.vn
+  detail_page: /?pageid=27160&docid={docid}&classid=1
+  file_host: https://datafiles.chinhphu.vn
+  listing_endpoint: /he-thong-van-ban?classid=1&mode=1
+  pagination: aspnet_postback
+  rate_limit: 1.0
+  rows_per_page: 50
+schema:
+  key_fields:
+  - name: _id
+    required: true
+    type: string
+  - name: title
+    required: true
+    type: string
+  - name: text
+    required: true
+    type: string
+  - name: date
+    required: false
+    type: date
+  - name: document_number
+    required: false
+    type: string
+  - name: document_type
+    required: false
+    type: string
+  - name: issuing_authority
+    required: false
+    type: string
+  - name: file_url
+    required: false
+    type: string
+  - name: url
+    required: true
+    type: string
+source:
+  auth: none
+  country: VN
+  data_types:
+  - legislation
+  description: 'Central-level Vietnamese legal instruments (~47,700) from the Government
+    Office "Hệ thống văn bản" at vanban.chinhphu.vn: constitutions, laws, ordinances,
+    decrees, decisions, circulars and joint circulars. Full text comes from the official
+    signed attachment on datafiles.chinhphu.vn (PDF, plus DOC/DOCX/RTF for older acts).
+    Rebuilt off vbpl.vn in 2026-08 (issue #1445) after that host moved behind a
+    JavaScript security challenge.
+
+    '
+  format: html
+  id: VN/PhapLuatGov
+  language: vi
+  name: Vietnam National Legal Document Database (Hệ thống văn bản)
+  url: https://vanban.chinhphu.vn/

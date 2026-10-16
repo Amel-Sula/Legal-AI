@@ -1,0 +1,62 @@
+api:
+  base_url: https://publication-bdds.apps.epo.org/bdds/bdds-bff-service/prod/api
+  product_id: 21
+auth:
+  type: none
+country: EU
+data_model:
+  dedup_key:
+  - ecli
+  update_strategy: append_only
+data_types:
+- case_law
+name: European Patent Office - Boards of Appeal
+rate_limit:
+  burst: 3
+  requests_per_second: 1
+schema:
+  field_types:
+    _fetched_at: datetime
+    _id: string
+    _source: string
+    _type: string
+    board_code: string
+    case_number: string
+    date: date
+    decision_date: date
+    ecli: string
+    language: string
+    text: string
+    title: string
+    url: url
+  key_fields:
+  - name: _id
+    required: true
+    type: string
+  - name: _source
+    required: false
+    type: string
+  - name: _type
+    required: false
+    type: string
+  - name: _fetched_at
+    required: false
+    type: string
+  - name: title
+    required: true
+    type: string
+  - name: text
+    required: true
+    type: string
+  - name: date
+    required: false
+    type: date
+  - name: url
+    required: true
+    type: string
+  required_fields:
+  - _id
+  - _source
+  - _type
+  - text
+url: https://www.epo.org/en/law-practice/case-law-appeals
